@@ -1,0 +1,46 @@
+.bg-uwu {
+    background-color: #F4928F !important;
+}
+/* custom card */
+/* https://www.youtube.com/watch?v=TqFqK8t6nfo */
+.box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: inherit;
+    /* align-items: center; */
+    flex-direction: column;
+}
+/* card custom */
+/* https://www.youtube.com/watch?v=Ol9_5cYtAaw */
+.img {
+    width: 200px;
+    height: 200px;
+    display: block;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+/* 7 Ways to deal with CSS */
+/* https://www.youtube.com/watch?v=ouncVBiye_M */
+
+.talent-image-1{
+    width: 250px;
+    height: 180px;
+    display: block;
+    background-size: cover !important;
+    background-position: center !important;
+    object-fit: cover;
+    height: fit-content;
+}
+.talent-image-2{
+    width: 250px;
+    height: 20%;
+    object-fit: cover;   
+}
+.talent-image{
+    width: 100%;
+    height: 180px;
+    background-color: #F4928F;
+}
