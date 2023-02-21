@@ -77,10 +77,10 @@
             </ul>
         </li>
 
-        <li class="purple dropdown-modal">
+        <li class="grey dropdown-modal">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <i class="ace-icon fa fa-bell icon-animated-bell"></i>
-                <span class="badge badge-important">8</span>
+                <span class="badge badge-grey">8</span>
             </a>
 
             <ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
@@ -145,10 +145,10 @@
             </ul>
         </li>
 
-        <li class="green dropdown-modal">
+        <li class="grey dropdown-modal">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
-                <span class="badge badge-success">5</span>
+                <span class="badge badge-grey">5</span>
             </a>
 
             <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
