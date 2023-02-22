@@ -33,7 +33,7 @@
 
 <ul class="nav nav-list">
     <li class="">
-        <a href="/">
+        <a href="#">
             <i class="menu-icon fa fa-tachometer"></i>
             <span class="menu-text"> Dashboard </span>
         </a>
@@ -42,7 +42,7 @@
     </li>
 
     <li class="">
-        <a href="/">
+        <a href="#">
             <i class="menu-icon fa fa-user"></i>
             <span class="menu-text"> Add Payment Client </span>
         </a>
@@ -51,9 +51,18 @@
     </li>
 
     <li class="">
-        <a href="/">
+        <a href="#">
             <i class="menu-icon fa fa-users"></i>
             <span class="menu-text"> Add Payment Talent </span>
+        </a>
+
+        <b class="arrow"></b>
+    </li>
+
+    <li class="">
+        <a href="#">
+            <i class="menu-icon fa fa-book"></i>
+            <span class="menu-text"> Add Order </span>
         </a>
 
         <b class="arrow"></b>

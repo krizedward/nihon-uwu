@@ -53,15 +53,21 @@ class AdminController extends Controller
     {
         try {
 
+            $service = ServiceTalent::findOrFail($request->service);
+
+            $talentFee = $service->price_service * (80/100);
+            $adminFee = $service->price_service * (20/100);
+            $endService = $service->duration;
+
             PaymentTalent::create([
-                'service' => $request->service,
-                'start_service' => 'start_service',
-                'end_service' => 'end_service',
+                'service' => $service->service_name,
+                'start_service' => $request->start_service,
+                'end_service' => $endService,
                 'proof_of_transfer' => 'proof_of_transfer',
                 'client_name' => $request->client,
-                'price_service' => 4000,
-                'talent_fee' => 40000,
-                'admin_fee' => 50000,
+                'price_service' => $service->price_service,
+                'talent_fee' => $talentFee,
+                'admin_fee' => $adminFee,
                 'status' => 'status',
             ]);
 
