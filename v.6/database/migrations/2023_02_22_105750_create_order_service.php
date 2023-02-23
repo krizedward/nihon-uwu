@@ -19,8 +19,8 @@ class CreateOrderService extends Migration
             $table->text('invoice')->nullable();
             $table->text('total_price')->nullable();
             $table->text('pay')->nullable();
-            $table->text('methode_pay')->nullable();
-            $table->text('proof_of_pay')->nullable();
+            // $table->text('methode_pay')->nullable();
+            // $table->text('proof_of_pay')->nullable();
             $table->text('note')->nullable();
             $table->timestamps();
             // untuk menyimpan data pembelian client

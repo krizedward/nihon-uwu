@@ -17,7 +17,8 @@ class CreateOrderTemp extends Migration
             $table->bigIncrements('id');
             $table->text('service_id')->nullable();
             $table->text('talent_id')->nullable();
-            $table->text('service_id')->nullable();
+            $table->text('service_name')->nullable();
+            $table->text('service_price')->nullable();
             $table->text('qty')->nullable();
             $table->text('subtotal')->nullable();
             $table->timestamps();
