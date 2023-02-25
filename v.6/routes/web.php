@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('admin.payment_client_index');
-});
+    return view('admin.dashboard');
+})->name('admin.dashboard');
 
 Route::get('admin/barang/{key}/' , 'AdminController@barangIndex')->name('admin.barang.index'); //done
 Route::get('admin/barang/{key}/create' , 'AdminController@barangCreate')->name('admin.barang.create'); //done
@@ -25,3 +25,7 @@ Route::get('admin/talent/payment/create', 'AdminController@paymentTalentCreate')
 Route::post('admin/talent/payment/create', 'AdminController@paymentTalentStore')->name('admin.tp.create');
 // client
 Route::get('admin/client/payment/', 'AdminController@paymentClientIndex');
+// order
+Route::get('admin/order/service', 'AdminController@orderServiceIndex')->name('admin.os.index');
+Route::post('admin/order/temp', 'AdminController@orderTempCreate')->name('admin.ot.create');
+Route::post('admin/order/service/create', 'AdminController@orderServiceCreate')->name('admin.os.create');

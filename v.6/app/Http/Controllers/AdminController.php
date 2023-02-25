@@ -6,17 +6,19 @@ use App\Models\Payment;
 use Illuminate\Http\Request;
 use App\Models\PaymentTalent;
 use App\Models\ServiceTalent;
+use App\Models\OrderService;
+use App\Models\OrderTemp;
+use App\Models\OrderDetail;
 
 class AdminController extends Controller
 {
     // membuat perfunction untuk route website
-    public function paymentTalentIndex() 
+    public function paymentTalentIndex()
     {
         try {
 
             $paymentTalent = paymentTalent::all();
             return view('admin.payment_talent_index', compact('paymentTalent'));
-
         } catch (\Exception $e) {
             $error = $e->getMessage();
             return $error;
@@ -28,7 +30,6 @@ class AdminController extends Controller
         try {
 
             return "hello";
-
         } catch (\Exception $e) {
             $error = $e->getMessage();
             return $error;
@@ -40,9 +41,8 @@ class AdminController extends Controller
         try {
 
             $serviceTalent = ServiceTalent::all();
-            
-            return view('admin.payment_talent_create', compact('serviceTalent'));
 
+            return view('admin.payment_talent_create', compact('serviceTalent'));
         } catch (\Exception $e) {
             $error = $e->getMessage();
             return $error;
@@ -55,8 +55,8 @@ class AdminController extends Controller
 
             $service = ServiceTalent::findOrFail($request->service);
 
-            $talentFee = $service->price_service * (80/100);
-            $adminFee = $service->price_service * (20/100);
+            $talentFee = $service->price_service * (80 / 100);
+            $adminFee = $service->price_service * (20 / 100);
             $endService = $service->duration;
 
             PaymentTalent::create([
@@ -72,7 +72,6 @@ class AdminController extends Controller
             ]);
 
             return redirect()->route('admin.tp.index');
-
         } catch (\Exception $e) {
             $error = $e->getMessage();
             return $error;
@@ -85,7 +84,74 @@ class AdminController extends Controller
 
             $serviceTalent = ServiceTalent::all();
             return view('admin.service_talent_index', compact('serviceTalent'));
+        } catch (\Exception $e) {
+            $error = $e->getMessage();
+            return $error;
+        }
+    }
 
+    public function orderServiceIndex()
+    {
+        try {
+            // 
+            $orderService = OrderService::all();
+            $orderTemp = OrderTemp::all();
+            return view('admin.order_service_index', compact('orderService', 'orderTemp'));
+        } catch (\Exception $e) {
+            $error = $e->getMessage();
+            return $error;
+        }
+    }
+
+    public function orderTempCreate(Request $request)
+    {
+        try {
+            //
+            OrderTemp::create([
+                'service_id' => 'null',
+                'talent_id' => 'null',
+                'service_name' => 'null',
+                'service_price' => 'null',
+                'qty' => 'null',
+                'subtotal' => 'null',
+                // 'subtotal' => $request->price * $request->qty,
+            ]);
+
+            return redirect()->route('admin.os.index');
+            // 
+        } catch (\Exception $e) {
+            $error = $e->getMessage();
+            return $error;
+        }
+    }
+
+    public function orderServiceCreate(Request $request)
+    {
+        try {
+            //
+            $order = OrderService::create([
+                'client_id' => 'null',
+                'invoice' => 'null',
+                'total_price' => 'null',
+                'pay' => 'null',
+                'note' => 'null',
+            ]);
+            $temp_order = OrderTemp::all();
+            foreach ($temp_order as $item)
+            {
+                OrderDetail::create([
+                    'service_id' => 'null',
+                    'order_id' => 'null',
+                    'service_name' => 'null',
+                    'service_price' => 'null',
+                    'qty' => 'null',
+                    'subtotal' => 'null', 
+                ]);
+            }
+
+            OrderTemp::query()->truncate();
+            return redirect()->route('admin.os.index');
+            // 
         } catch (\Exception $e) {
             $error = $e->getMessage();
             return $error;

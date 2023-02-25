@@ -115,7 +115,7 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							J<span class="blue bolder">Lestari</span>apps &copy; 2022-2023
+							nihon<span class="blue bolder">uwu</span>apps &copy; 2022-2023
 						</span>
 					</div>
 				</div>
