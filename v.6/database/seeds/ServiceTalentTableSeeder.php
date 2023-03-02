@@ -15,28 +15,28 @@ class ServiceTalentTableSeeder extends Seeder
         //
         ServiceTalent::insert([
             [
-                'service_id' => 'SR11',
+                'service_code' => 'SR11',
                 'service_name' => 'Chatting',
-                'duration' => '8 Jam',
+                'duration' => '1 Hari',
                 'price_service' => 50000,
                 'description' => 'term and condition',
                 'point' => 0,
             ], [
-                'service_id' => 'SR12',
+                'service_code' => 'SR12',
                 'service_name' => 'Chatting',
                 'duration' => '3 Hari',
                 'price_service' => 100000,
                 'description' => 'term and condition',
                 'point' => 0,
             ], [
-                'service_id' => 'SR13',
+                'service_code' => 'SR13',
                 'service_name' => 'Chatting',
                 'duration' => '7 Hari',
                 'price_service' => 150000,
                 'description' => 'term and condition',
                 'point' => 0,
             ], [
-                'service_id' => 'SR14',
+                'service_code' => 'SR14',
                 'service_name' => 'Calls',
                 'duration' => '30 Hari',
                 'price_service' => 700000,
@@ -47,7 +47,7 @@ class ServiceTalentTableSeeder extends Seeder
 
         $datas = array(
             array(
-                'service_id' => 'SR15',
+                'service_code' => 'SR15',
                 'service_kind' => 'Additional Service',
                 'service_name' => 'Calls',
                 'duration' => '30 Menit',
@@ -57,7 +57,7 @@ class ServiceTalentTableSeeder extends Seeder
             ),
 
             array(
-                'service_id' => 'SR16',
+                'service_code' => 'SR16',
                 'service_kind' => 'Additional Service',
                 'service_name' => 'Calls',
                 'duration' => '60 Menit',
@@ -67,7 +67,7 @@ class ServiceTalentTableSeeder extends Seeder
             ),
 
             array(
-                'service_id' => 'SR17',
+                'service_code' => 'SR17',
                 'service_kind' => 'Additional Service',
                 'service_name' => 'Video Calls',
                 'duration' => '30 Menit',
@@ -77,7 +77,7 @@ class ServiceTalentTableSeeder extends Seeder
             ),
 
             array(
-                'service_id' => 'SR18',
+                'service_code' => 'SR18',
                 'service_kind' => 'Additional Service',
                 'service_name' => 'Video Calls',
                 'duration' => '60 Menit',
@@ -87,7 +87,7 @@ class ServiceTalentTableSeeder extends Seeder
             ),
 
             array(
-                'service_id' => 'SR19',
+                'service_code' => 'SR19',
                 'service_kind' => 'Additional Service',
                 'service_name' => 'Voice Note',
                 'duration' => '1 Pcs',
@@ -97,7 +97,7 @@ class ServiceTalentTableSeeder extends Seeder
             ),
 
             array(
-                'service_id' => 'SR110',
+                'service_code' => 'SR110',
                 'service_kind' => 'Additional Service',
                 'service_name' => 'Voice Note',
                 'duration' => '1 Pcs',
@@ -107,7 +107,7 @@ class ServiceTalentTableSeeder extends Seeder
             ),
 
             array(
-                'service_id' => 'SR111',
+                'service_code' => 'SR111',
                 'service_kind' => 'Additional Service',
                 'service_name' => 'PAP Full Face',
                 'duration' => '1 Pcs',
@@ -117,7 +117,7 @@ class ServiceTalentTableSeeder extends Seeder
             ),
 
             array(
-                'service_id' => 'SR112',
+                'service_code' => 'SR112',
                 'service_kind' => 'Additional Service',
                 'service_name' => 'PAP Masker',
                 'duration' => '1 Pcs',
@@ -140,7 +140,7 @@ class ServiceTalentTableSeeder extends Seeder
 
         $datas_offline = array(
             array(
-                'service_id' => 'SR213',
+                'service_code' => 'SR213',
                 'service_sort' => 'Offline Dating',
                 'service_kind' => 'Main Service',
                 'service_name' => 'Sebagai Pacar',
@@ -151,7 +151,7 @@ class ServiceTalentTableSeeder extends Seeder
             ),
 
             array(
-                'service_id' => 'SR214',
+                'service_code' => 'SR214',
                 'service_sort' => 'Offline Dating',
                 'service_kind' => 'Additional Service',
                 'service_name' => 'Sebagai Pacar Extends',
@@ -162,7 +162,7 @@ class ServiceTalentTableSeeder extends Seeder
             ),
 
             array(
-                'service_id' => 'SR215',
+                'service_code' => 'SR215',
                 'service_sort' => 'Offline Dating',
                 'service_kind' => 'Main Service',
                 'service_name' => 'Sebagai Teman',
@@ -173,7 +173,7 @@ class ServiceTalentTableSeeder extends Seeder
             ),
 
             array(
-                'service_id' => 'SR216',
+                'service_code' => 'SR216',
                 'service_sort' => 'Offline Dating',
                 'service_kind' => 'Main Service',
                 'service_name' => 'Nonton Bioskop',
@@ -187,7 +187,7 @@ class ServiceTalentTableSeeder extends Seeder
 
         foreach ($datas as $data) {
             ServiceTalent::create([
-                'service_id' => $data['service_id'],
+                'service_code' => $data['service_code'],
                 'service_kind' => $data['service_kind'],
                 'service_name' => $data['service_name'],
                 'duration' => $data['duration'],
@@ -199,7 +199,7 @@ class ServiceTalentTableSeeder extends Seeder
 
         foreach ($datas_offline as $data) {
             ServiceTalent::create([
-                'service_id' => $data['service_id'],
+                'service_code' => $data['service_code'],
                 'service_sort' => $data['service_sort'],
                 'service_kind' => $data['service_kind'],
                 'service_name' => $data['service_name'],

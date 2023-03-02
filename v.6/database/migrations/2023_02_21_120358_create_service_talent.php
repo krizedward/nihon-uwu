@@ -15,7 +15,7 @@ class CreateServiceTalent extends Migration
     {
         Schema::create('service_talent', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('service_id')->nullable();
+            $table->text('service_code')->nullable();
             // $table->text('service_sort')->nullable();
             // $table->text('service_kind')->nullable();
             $table->enum('service_sort' ,['Online Dating','Offline Dating'])->default('Online Dating');

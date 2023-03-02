@@ -12,10 +12,10 @@ class OrderService extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'client_id',
         'invoice',
-        'total_price',
-        'pay',
-        'note',
+        'start_service',
+        'end_service',
+        'total_payment',
+        'status_order',
     ];
 }

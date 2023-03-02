@@ -12,11 +12,12 @@ class OrderTemp extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'service_id',
+        'client_id',
         'talent_id',
-        'service_name',
-        'service_price',
-        'qty',
-        'subtotal',
+        'price_service',
+        'qty_service',
+        'start_service',
+        'end_service',
+        'subtotal_service',
     ];
 }

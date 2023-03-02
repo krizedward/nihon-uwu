@@ -12,11 +12,15 @@ class OrderDetail extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
+        'invoice',
         'order_id',
-        'service_id',
-        'service_name',
-        'service_price',
-        'qty',
-        'subtotal',
+        'client_id',
+        'talent_id',
+        'price_service',
+        'qty_service',
+        'start_service',
+        'end_service',
+        'subtotal_service',
+        'status_service',
     ];
 }

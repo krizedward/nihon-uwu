@@ -14,6 +14,8 @@ class PaymentTalentTableSeeder extends Seeder
     {
         //
         PaymentTalent::create([
+            'paytalent_code' => 'PT11',
+            'talent_name' => 'talent_name',
             'service' => 'service',
             'start_service' => 'start_service',
             'end_service' => 'end_service',

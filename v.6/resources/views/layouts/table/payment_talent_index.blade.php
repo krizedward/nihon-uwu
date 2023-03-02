@@ -21,13 +21,14 @@
             <!-- <th class="detail-col">Detail</th> -->
             <th>ID</th>
             <th>Service</th>
+            <th>Talent</th>
             <th>Start Service</th>
             <th>End Service</th>
-            <th>Bukti TF</th>
             <th>Client</th>
             <th>Price</th>
             <th>Talent Fee</th>
             <th>Admin Fee</th>
+            <th>Bukti TF</th>
             <th>Status</th>
             <th>Aksi</th>
             <!-- <th>Harga Jual</th>
@@ -55,14 +56,15 @@
             </td>
 
             <td>{{ $data->id }}</td>
+            <td>{{ $data->talent_name }}</td>
             <td>{{ $data->service }}</td>
             <td>{{ $data->start_service }}</td>
             <td>{{ $data->end_service }}</td>
-            <td>{{ $data->proof_of_transfer }}</td>
             <td>{{ $data->client_name }}</td>
             <td>Rp {{ number_format($data->price_service,2,',','.')  }}</td>
             <td>Rp {{ number_format($data->talent_fee,2,',','.')  }}</td>
             <td>Rp {{ number_format($data->admin_fee,2,',','.')  }}</td>
+            <td>{{ $data->proof_of_transfer }}</td>
             <td>{{ $data->status }}</td>
 
             <td>

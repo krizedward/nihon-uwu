@@ -14,12 +14,20 @@ class OrderTempTableSeeder extends Seeder
     {
         //
         OrderTemp::create([
-            'service_id' => 'null',
-            'talent_id' => 'null',
-            'service_name' => 'null',
-            'service_price' => 'null',
-            'qty' => 'null',
-            'subtotal' => 'null',
+            // 'service_id' => 'null',
+            // 'talent_id' => 'null',
+            // 'service_name' => 'null',
+            // 'service_price' => 'null',
+            // 'qty' => 'null',
+            // 'subtotal' => 'null',
+
+            // 'client_id' => 'null',
+            // 'talent_id'  => 'null',
+            // 'price_service' => 0,
+            // 'qty_service' => 0,
+            // 'start_service' => '2023-01-02',
+            // 'end_service' => '2023-01-02',
+            // 'subtotal_service' => 0,
         ]);
     }
 }

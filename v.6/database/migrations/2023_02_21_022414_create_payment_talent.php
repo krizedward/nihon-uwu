@@ -15,6 +15,8 @@ class CreatePaymentTalent extends Migration
     {
         Schema::create('payment_talent', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->text('paytalent_code')->nullable();
+            $table->text('talent_name')->nullable();
             $table->text('service')->nullable();
             $table->text('start_service')->nullable();
             $table->text('end_service')->nullable();

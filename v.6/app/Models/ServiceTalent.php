@@ -12,7 +12,7 @@ class ServiceTalent extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'service_id',
+        'service_code',
         'service_sort',
         'service_kind',
         'service_name',

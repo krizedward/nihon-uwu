@@ -2,11 +2,11 @@
 
 namespace App;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role',
     ];
 
     /**
@@ -36,4 +36,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function talent()
+    {
+        // return $this->hasOne('App\Models\Talent','user_id');
+        return $this->hasOne('App\Models\Talent', 'user_id');
+        // return $this->belongsTo(Talent::class);
+    }
+
+    public function client()
+    {
+        return $this->hasOne('App\Models\Client', 'user_id');
+    }
 }

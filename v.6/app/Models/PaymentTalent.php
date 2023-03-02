@@ -12,6 +12,8 @@ class PaymentTalent extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
+        'paytalent_code',
+        'talent_name',
         'service',
         'start_service',
         'end_service',

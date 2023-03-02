@@ -49,13 +49,7 @@
 </div>
 <!-- tabel-service -->
 <div class="row">
-	<div class="col-xs-6">
-		@include('layouts.table.order_temp_index')
-	</div><!-- /.span -->
-
-	<div class="col-xs-6">
-		@include('layouts.table.order_service_index')
-	</div><!-- /.span -->
+	@include('layouts.table.order_temp_index')
 </div><!-- /.row -->
 
 <div class="row">

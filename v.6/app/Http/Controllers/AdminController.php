@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Payment;
 use Illuminate\Http\Request;
 use App\Models\PaymentTalent;
 use App\Models\ServiceTalent;
 use App\Models\OrderService;
 use App\Models\OrderTemp;
 use App\Models\OrderDetail;
+use App\Models\Talent;
 
 class AdminController extends Controller
 {
@@ -60,6 +60,7 @@ class AdminController extends Controller
             $endService = $service->duration;
 
             PaymentTalent::create([
+                'talent_name' => $request->talent,
                 'service' => $service->service_name,
                 'start_service' => $request->start_service,
                 'end_service' => $endService,
@@ -93,28 +94,40 @@ class AdminController extends Controller
     public function orderServiceIndex()
     {
         try {
-            // 
+            //
+            $serviceTalent = ServiceTalent::all();
             $orderService = OrderService::all();
             $orderTemp = OrderTemp::all();
-            return view('admin.order_service_index', compact('orderService', 'orderTemp'));
+            $selectTalent = Talent::all();
+            return view(
+                'admin.order_service_index',
+                compact(
+                    'orderService',
+                    'orderTemp',
+                    'serviceTalent',
+                    'selectTalent',
+                )
+            );
         } catch (\Exception $e) {
             $error = $e->getMessage();
             return $error;
         }
     }
 
-    public function orderTempCreate(Request $request)
+    public function orderTempCreate(Request $request) //proses form temp order
     {
         try {
             //
+            $service = ServiceTalent::findOrFail($request->service);
+
             OrderTemp::create([
-                'service_id' => 'null',
-                'talent_id' => 'null',
-                'service_name' => 'null',
-                'service_price' => 'null',
-                'qty' => 'null',
-                'subtotal' => 'null',
-                // 'subtotal' => $request->price * $request->qty,
+                'client_id' => $request->client,
+                'talent_id' => $request->talent,
+                'price_service' => $service->price_service,
+                'qty_service' => $request->jumlah,
+                'start_service' => $request->start_service,
+                'end_service' => $request->start_service,
+                'subtotal_service' => $service->price_service * $request->jumlah,
             ]);
 
             return redirect()->route('admin.os.index');
@@ -125,27 +138,39 @@ class AdminController extends Controller
         }
     }
 
-    public function orderServiceCreate(Request $request)
+    public function orderServiceCreate(Request $request) // proses form service order
     {
         try {
             //
-            $order = OrderService::create([
-                'client_id' => 'null',
-                'invoice' => 'null',
-                'total_price' => 'null',
-                'pay' => 'null',
-                'note' => 'null',
-            ]);
+            $latest = OrderService::orderBy('id','DESC')->first();
+            if(!$latest) {
+                $invoice = '0001';
+            } else {
+                $invoice = sprintf('%04d',$latest->invoice + 1);
+            }
+
             $temp_order = OrderTemp::all();
-            foreach ($temp_order as $item)
-            {
+
+            $order = OrderService::create([
+                'invoice' => $invoice,
+                'start_service' => '2023-02-02',
+                'end_service' => '2023-02-02',
+                'total_payment' => $request->total,
+                'status_order' => 'Pending',
+            ]);
+            
+            foreach ($temp_order as $item) {
                 OrderDetail::create([
-                    'service_id' => 'null',
-                    'order_id' => 'null',
-                    'service_name' => 'null',
-                    'service_price' => 'null',
-                    'qty' => 'null',
-                    'subtotal' => 'null', 
+                    'invoice' => $invoice,
+                    'order_id' => $order->id,
+                    'client_id' => $item->client_id,
+                    'talent_id' => $item->talent_id,
+                    'price_service' => $item->price_service,
+                    'qty_service' => $item->qty_service,
+                    'start_service' => $item->start_service,
+                    'end_service' => $item->end_service,
+                    'subtotal_service' => $item->subtotal_service,
+                    'status_service' => 'Undone',
                 ]);
             }
 
