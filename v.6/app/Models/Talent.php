@@ -22,4 +22,9 @@ class Talent extends Model
         'short_description',
         'status',
     ];
+
+    public function user()
+    {
+        return $this->hasOne('App\User', 'id');
+    }
 }

@@ -26,7 +26,7 @@
                 <th>Harga</th>
                 <th>Jumlah</th>
                 <th>Subtotal</th>
-                <th>Aksi</th>
+                <th>Hapus</th>
                 <!-- <th>Harga Jual</th>
 					<th>
 						<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
@@ -62,44 +62,10 @@
 
                 <td>{{ $data->id }}</td>
                 <td>{{ $data->client_id }}</td>
-                <td>{{ $data->talent_id }}</td>
+                <td>{{ $data->talent->nickname }}</td>
                 <td>Rp {{ number_format($data->price_service,2,',','.')  }}</td>
                 <td>{{ $data->qty_service }}</td>
                 <td>Rp {{ number_format($data->subtotal_service,2,',','.')  }}</td>
-
-                <td>
-                    <div class="hidden-sm hidden-xs btn-group">
-                        <button class="btn btn-xs btn-warning">
-                            <i class="ace-icon fa fa-pencil bigger-120"></i>
-                        </button>
-                    </div>
-
-                    <div class="hidden-md hidden-lg">
-                        <div class="inline pos-rel">
-                            <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-                                <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
-                            </button>
-
-                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                <li>
-                                    <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-                                        <span class="green">
-                                            <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-                                        </span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-                                        <span class="red">
-                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
 
                 <!-- hapus dan mobile button -->
                 <td class="hidden-sm hidden-xs">
@@ -314,7 +280,7 @@
                 <th>Tgl Mulai</th>
                 <th>Tgl Selesai</th>
                 <th>Total</th>
-                <th>Aksi</th>
+                <th>Detail</th>
                 <!-- <th>Harga Jual</th>
 					<th>
 						<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
@@ -347,9 +313,9 @@
 
                 <td>
                     <div class="hidden-sm hidden-xs btn-group">
-                        <button class="btn btn-xs btn-warning">
+                        <a class="btn btn-xs btn-warning" href="/">
                             <i class="ace-icon fa fa-pencil bigger-120"></i>
-                        </button>
+                        </a>
                     </div>
 
                     <div class="hidden-md hidden-lg">
@@ -359,49 +325,6 @@
                             </button>
 
                             <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                <li>
-                                    <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-                                        <span class="green">
-                                            <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-                                        </span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-                                        <span class="red">
-                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </td>
-
-                <!-- hapus dan mobile button -->
-                <td class="hidden-sm hidden-xs">
-                    <div class="hidden-sm hidden-xs btn-group">
-                        <button class="btn btn-xs btn-danger">
-                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                        </button>
-                    </div>
-
-                    <div class="hidden-md hidden-lg">
-                        <div class="inline pos-rel">
-                            <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-                                <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
-                            </button>
-
-                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                <li>
-                                    <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-                                        <span class="blue">
-                                            <i class="ace-icon fa fa-search-plus bigger-120"></i>
-                                        </span>
-                                    </a>
-                                </li>
-
                                 <li>
                                     <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
                                         <span class="green">

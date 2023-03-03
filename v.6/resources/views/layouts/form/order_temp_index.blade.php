@@ -42,7 +42,7 @@
             <select name="talent" class="col-xs-10 col-sm-5" id="form-field-select-1">
                 <option value="" disabled selected>Pilih Talent..</option>
                 @foreach($selectTalent as $data)
-                <option value="{{ $data->id }}">{{ $data->nickname }}</option>
+                <option value="{{ $data->id }}">{{ $data->nickname }} | {{ $data->user->name }}</option>
                 @endforeach
             </select>
         </div>

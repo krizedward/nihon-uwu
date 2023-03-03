@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Talent;
 
 class OrderTemp extends Model
 {
@@ -20,4 +21,10 @@ class OrderTemp extends Model
         'end_service',
         'subtotal_service',
     ];
+
+    public function talent()
+    {
+        // has many problem
+        return $this->belongsTo('App\Models\Talent','talent_id','id');
+    }
 }

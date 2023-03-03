@@ -24,7 +24,7 @@ class CreateOrderTemp extends Migration
 
             $table->bigIncrements('id');
             $table->text('client_id')->nullable();
-            $table->text('talent_id')->nullable();
+            $table->unsignedBigInteger('talent_id');
             $table->integer('price_service')->nullable()->unsigned();
             $table->integer('qty_service')->nullable()->unsigned();
             $table->date('start_service')->nullable();
@@ -33,6 +33,11 @@ class CreateOrderTemp extends Migration
             $table->timestamps();
             // Tabel temporders ini kita umpamakan sebagai keranjang belanja yang menjadi tempat
             // untuk menyimpan sementara data menu yang dipilih oleh pembeli/customer.
+
+            $table->foreign('talent_id')
+            ->references('id')->on('talent')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 
