@@ -17,7 +17,7 @@
 			<a href="/">Dashboard</a>
 		</li>
 
-        <!-- <li class="active">Payment Client</li> -->
+        <li class="active">Service Order</li>
 
 		<!-- <li>
             <a href="#">Other Pages</a>

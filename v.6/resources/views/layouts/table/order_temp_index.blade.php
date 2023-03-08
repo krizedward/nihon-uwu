@@ -313,7 +313,7 @@
 
                 <td>
                     <div class="hidden-sm hidden-xs btn-group">
-                        <a class="btn btn-xs btn-warning" href="/">
+                        <a class="btn btn-xs btn-warning" href="{{ route('admin.os.detail', $data->id) }}">
                             <i class="ace-icon fa fa-pencil bigger-120"></i>
                         </a>
                     </div>

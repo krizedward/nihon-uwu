@@ -12,20 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('admin.dashboard');
+    return redirect()->route('admin.os.index'); //ganti route name saja
 })->name('admin.dashboard');
 
-Route::get('admin/barang/{key}/' , 'AdminController@barangIndex')->name('admin.barang.index'); //done
-Route::get('admin/barang/{key}/create' , 'AdminController@barangCreate')->name('admin.barang.create'); //done
-Route::post('admin/barang/{key}/create' , 'AdminController@barangStore')->name('admin.barang.store'); //done
+// example
+Route::get('admin/barang/{key}/' , 'AdminController@barangIndex')->name('admin.barang.index'); //example
+Route::get('admin/barang/{key}/create' , 'AdminController@barangCreate')->name('admin.barang.create'); //example
+Route::post('admin/barang/{key}/create' , 'AdminController@barangStore')->name('admin.barang.store'); //example
+
+// admin role
 // talent
-Route::get('admin/talent/service/', 'AdminController@serviceTalentIndex');
-Route::get('admin/talent/payment/', 'AdminController@paymentTalentIndex')->name('admin.tp.index');
+Route::get('admin/talent/service/', 'AdminController@serviceTalentIndex'); // masih belum di set url
+Route::get('admin/talent/payment/', 'AdminController@paymentTalentIndex')->name('admin.tp.index'); // masih belum di set url
 Route::get('admin/talent/payment/create', 'AdminController@paymentTalentCreate')->name('admin.tp.create');
 Route::post('admin/talent/payment/create', 'AdminController@paymentTalentStore')->name('admin.tp.create');
 // client
 Route::get('admin/client/payment/', 'AdminController@paymentClientIndex');
 // order
-Route::get('admin/order/service', 'AdminController@orderServiceIndex')->name('admin.os.index');
-Route::post('admin/order/temp', 'AdminController@orderTempCreate')->name('admin.ot.create');
-Route::post('admin/order/service/create', 'AdminController@orderServiceCreate')->name('admin.os.create');
+Route::get('admin/order/service', 'AdminController@orderServiceIndex')->name('admin.os.index'); //done view
+Route::post('admin/order/temp', 'AdminController@orderTempCreate')->name('admin.ot.create'); //done proses
+Route::post('admin/order/service/create', 'AdminController@orderServiceCreate')->name('admin.os.create'); //done proses
+Route::get('admin/order/service/detail/{id}', 'AdminController@orderSeviceDetail')->name('admin.os.detail');

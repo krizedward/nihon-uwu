@@ -12,8 +12,8 @@ use App\Models\Talent;
 
 class AdminController extends Controller
 {
-    // membuat perfunction untuk route website
-    public function paymentTalentIndex()
+    
+    public function paymentTalentIndex() // membuat perfunction untuk route website
     {
         try {
 
@@ -79,7 +79,7 @@ class AdminController extends Controller
         }
     }
 
-    public function serviceTalentIndex()
+    public function serviceTalentIndex() // menampilkan service untuk talent yang diservice
     {
         try {
 
@@ -177,6 +177,18 @@ class AdminController extends Controller
             OrderTemp::query()->truncate();
             return redirect()->route('admin.os.index');
             // 
+        } catch (\Exception $e) {
+            $error = $e->getMessage();
+            return $error;
+        }
+    }
+
+    public function orderSeviceDetail($id) // menampilkan data di service tabel
+    {
+        try{
+            //
+            return view('admin.order_service_detail');
+
         } catch (\Exception $e) {
             $error = $e->getMessage();
             return $error;
