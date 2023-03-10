@@ -67,7 +67,7 @@
 					</a>
 				</div>
 
-				@include('layouts.header.version-1-header')
+				@include('layouts.header.version-2-header')
 
 			</div><!-- /.navbar-container -->
 		</div>

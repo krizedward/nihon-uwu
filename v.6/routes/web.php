@@ -31,5 +31,6 @@ Route::get('admin/client/payment/', 'AdminController@paymentClientIndex');
 // order
 Route::get('admin/order/service', 'AdminController@orderServiceIndex')->name('admin.os.index'); //done view
 Route::post('admin/order/temp', 'AdminController@orderTempCreate')->name('admin.ot.create'); //done proses
+Route::delete('admin/order/temp/delete/{idTemp}', 'AdminController@orderTempDelete')->name('admin.ot.delete');
 Route::post('admin/order/service/create', 'AdminController@orderServiceCreate')->name('admin.os.create'); //done proses
 Route::get('admin/order/service/detail/{id}', 'AdminController@orderSeviceDetail')->name('admin.os.detail');

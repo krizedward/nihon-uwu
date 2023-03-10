@@ -13,13 +13,6 @@
         </tr> -->
 
             <tr>
-                <th class="center">
-                    <label class="pos-rel">
-                        <input type="checkbox" class="ace" />
-                        <span class="lbl"></span>
-                    </label>
-                </th>
-                <!-- <th class="detail-col">Detail</th> -->
                 <th>ID</th>
                 <th>Client</th>
                 <th>Talent</th>
@@ -51,15 +44,6 @@
             $total = $total + $subtotal;
             @endphp
             <tr>
-                <td class="center">
-                    <div class="action-buttons">
-                        <a href="#" class="green bigger-140 show-details-btn" title="Show Details">
-                            <i class="ace-icon fa fa-angle-double-down"></i>
-                            <span class="sr-only">Details</span>
-                        </a>
-                    </div>
-                </td>
-
                 <td>{{ $data->id }}</td>
                 <td>{{ $data->client_id }}</td>
                 <td>{{ $data->talent->nickname }}</td>
@@ -70,9 +54,13 @@
                 <!-- hapus dan mobile button -->
                 <td class="hidden-sm hidden-xs">
                     <div class="hidden-sm hidden-xs btn-group">
-                        <button class="btn btn-xs btn-danger">
-                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
-                        </button>
+                        <form action="{{ route('admin.ot.delete',[$data->id]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-xs btn-danger">
+                                <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                            </button>
+                        </form>
                     </div>
 
                     <div class="hidden-md hidden-lg">
@@ -254,6 +242,16 @@
 </div>
 
 <div class="col-xs-6">
+    
+    <form class="form-horizontal" action="{{ route('admin.os.create') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        @method('POST')
+        <input type="hidden" name="total" value="{{ $total }}">
+        <div class="form-group col-sm-3">
+            <button>Tambah</button>
+        </div>
+    </form>
+    
     <table id="simple-table" class="table  table-bordered table-hover">
         <thead>
             <!-- <tr>
@@ -268,13 +266,6 @@
         </tr> -->
 
             <tr>
-                <th class="center">
-                    <label class="pos-rel">
-                        <input type="checkbox" class="ace" />
-                        <span class="lbl"></span>
-                    </label>
-                </th>
-                <!-- <th class="detail-col">Detail</th> -->
                 <th>ID</th>
                 <th>Invoice</th>
                 <th>Tgl Mulai</th>
@@ -296,15 +287,6 @@
             <!-- untuk tabel umum -->
             @foreach($orderService as $data)
             <tr>
-                <td class="center">
-                    <div class="action-buttons">
-                        <a href="#" class="green bigger-140 show-details-btn" title="Show Details">
-                            <i class="ace-icon fa fa-angle-double-down"></i>
-                            <span class="sr-only">Details</span>
-                        </a>
-                    </div>
-                </td>
-
                 <td>{{ $data->id }}</td>
                 <td>{{ $data->invoice }}</td>
                 <td>{{ $data->start_service }}</td>
@@ -486,13 +468,4 @@
             @endforeach
         </tbody>
     </table>
-
-    <form class="form-horizontal" action="{{ route('admin.os.create') }}" method="post" enctype="multipart/form-data">
-        @csrf
-        @method('POST')
-        <input type="hidden" name="total" value="{{ $total }}">
-        <div class="form-group col-sm-3">
-            <button>Tambah</button>
-        </div>
-    </form>
 </div>

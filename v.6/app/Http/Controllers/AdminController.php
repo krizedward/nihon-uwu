@@ -138,6 +138,23 @@ class AdminController extends Controller
         }
     }
 
+    public function orderTempDelete($id)
+    {
+        try {
+            //
+            $idTemp = OrderTemp::find($id);
+            // return dd($idTemp);
+
+            $idTemp->delete();
+
+            return redirect()->route('admin.os.index');
+            //
+        } catch (\Exception $e) {
+            $error = $e->getMessage();
+            return $error;
+        }
+    }
+
     public function orderServiceCreate(Request $request) // proses form service order
     {
         try {
