@@ -156,5 +156,11 @@ class UsersTableSeeder extends Seeder
             'password' => '$2y$10$HRxBtLp4z0mvHcQm.WbcV.lcbgpmJVwZbNT0xYa8EPweK.ZXovDcG',
             'role' => 'talent',
         ]);
+
+        User::create([
+            'name' => 'Edward',
+            'password' => '$2y$10$HRxBtLp4z0mvHcQm.WbcV.lcbgpmJVwZbNT0xYa8EPweK.ZXovDcG',
+            'role' => 'client',
+        ]);
     }
 }
