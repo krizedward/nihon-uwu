@@ -6,7 +6,7 @@
     <div class="form-group">
         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Service </label>
         <div class="col-sm-9">
-            <select name="service" class="col-xs-10 col-sm-5" id="form-field-select-1">
+            <select name="service" class="col-xs-11 col-sm-6" id="form-field-select-1">
                 <option value="" disabled selected>Pilih Service..</option>
                 @foreach($serviceTalent as $data)
                 <option value="{{ $data->id }}">{{ $data->service_sort }} | {{ $data->service_name }} - {{ $data->duration }}</option>
@@ -19,7 +19,7 @@
     <div class="form-group">
         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Tanggal Mulai </label>
         <div class="col-sm-9">
-            <div class="input-group col-xs-10 col-sm-5">
+            <div class="input-group col-xs-11 col-sm-5">
                 <input name="start_service" placeholder="Pilh Tanggal.." class="form-control date-picker " id="id-date-picker-1" type="text" data-date-format="yyyy-mm-dd" />
                 <span class="input-group-addon">
                     <i class="fa fa-calendar bigger-110"></i>
@@ -39,7 +39,7 @@
     <div class="form-group">
         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Talent </label>
         <div class="col-sm-9">
-            <select name="talent" class="col-xs-10 col-sm-5" id="form-field-select-1">
+            <select name="talent" class="col-xs-11 col-sm-6" id="form-field-select-1">
                 <option value="" disabled selected>Pilih Talent..</option>
                 @foreach($selectTalent as $data)
                 <option value="{{ $data->id }}">{{ $data->nickname }} | {{ $data->user->name }}</option>
@@ -52,7 +52,7 @@
     <div class="form-group">
         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Client </label>
         <div class="col-sm-9">
-            <input type="text" name="client" id="form-field-1" class="col-xs-10 col-sm-5" placeholder="Nama Client.." />
+            <input type="text" name="client" id="form-field-1" class="col-xs-11 col-sm-6" placeholder="Nama Client.." />
         </div>
     </div>
 

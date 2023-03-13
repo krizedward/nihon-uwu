@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return redirect()->route('admin.os.index'); //ganti route name saja
+    // return view('welcome'); //ganti route name saja //untuk custom website frontend
+    return redirect()->route('admin.os.index'); //ganti route name saja //untuk custom website frontend
 })->name('admin.dashboard');
 
 // example

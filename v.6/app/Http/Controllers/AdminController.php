@@ -49,7 +49,7 @@ class AdminController extends Controller
         }
     }
 
-    public function paymentTalentStore(Request $request)
+    public function paymentTalentStore(Request $request) // membuat pembayaran talent
     {
         try {
 
@@ -204,7 +204,11 @@ class AdminController extends Controller
     {
         try{
             //
-            return view('admin.order_service_detail');
+            $paymentTalent = PaymentTalent::all();
+            
+            return view('admin.order_service_detail',compact(
+                'paymentTalent',
+            ));
 
         } catch (\Exception $e) {
             $error = $e->getMessage();

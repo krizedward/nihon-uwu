@@ -1,6 +1,6 @@
 <!-- import-template -->
 @extends('layouts.ace')
-@section('title','Service Talent Index')
+@section('title','Service Talent Detail')
 
 <!-- header -->
 @push('header')
@@ -55,7 +55,7 @@
 <!-- none -->
 <div class="row">
 	<div class="col-xs-12">
-		@include('layouts.detail.order_service_detail')
+		@include('layouts.table.order_service_detail')
 	</div><!-- /.span -->
 </div><!-- /.row -->
 
