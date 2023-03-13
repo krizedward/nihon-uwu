@@ -216,7 +216,7 @@
 
                                 <td>
                                     <div class="hidden-sm hidden-xs btn-group">
-                                        <a class="btn btn-xs btn-warning" href="{{ route('admin.os.detail', $data->id) }}">
+                                        <a class="btn btn-xs btn-warning" href="{{ route('admin.os.detail', $data->invoice) }}">
                                             <i class="ace-icon fa fa-pencil bigger-120"></i>
                                         </a>
                                     </div>
@@ -229,7 +229,7 @@
 
                                             <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
                                                 <li>
-                                                    <a href="{{ route('admin.os.detail', [$data->id] ) }}" class="tooltip-success" data-rel="tooltip" title="Detail">
+                                                    <a href="{{ route('admin.os.detail', [$data->invoice] ) }}" class="tooltip-success" data-rel="tooltip" title="Detail">
                                                         <span class="blue">
                                                             <i class="ace-icon fa fa-eye bigger-120"></i>
                                                         </span>

@@ -23,4 +23,16 @@ class OrderDetail extends Model
         'subtotal_service',
         'status_service',
     ];
+
+    public function talent()
+    {
+        // has many problem
+        return $this->belongsTo('App\Models\Talent','talent_id','id');
+    }
+
+    public function client()
+    {
+        // has many problem
+        return $this->belongsTo('App\Models\Client','client_id','id');
+    }
 }

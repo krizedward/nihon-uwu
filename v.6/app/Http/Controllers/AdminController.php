@@ -9,6 +9,7 @@ use App\Models\OrderService;
 use App\Models\OrderTemp;
 use App\Models\OrderDetail;
 use App\Models\Talent;
+use App\Models\Client;
 
 class AdminController extends Controller
 {
@@ -99,6 +100,8 @@ class AdminController extends Controller
             $orderService = OrderService::all();
             $orderTemp = OrderTemp::all();
             $selectTalent = Talent::all();
+            $selectClient = Client::all();
+
             return view(
                 'admin.order_service_index',
                 compact(
@@ -106,6 +109,7 @@ class AdminController extends Controller
                     'orderTemp',
                     'serviceTalent',
                     'selectTalent',
+                    'selectClient',
                 )
             );
         } catch (\Exception $e) {
@@ -200,14 +204,16 @@ class AdminController extends Controller
         }
     }
 
-    public function orderSeviceDetail($id) // menampilkan data di service tabel
+    public function orderSeviceDetail($invoice) // menampilkan data di service tabel
     {
         try{
             //
             $paymentTalent = PaymentTalent::all();
+            $orderDetail = OrderDetail::where('invoice', $invoice)->get();
             
             return view('admin.order_service_detail',compact(
                 'paymentTalent',
+                'orderDetail',
             ));
 
         } catch (\Exception $e) {

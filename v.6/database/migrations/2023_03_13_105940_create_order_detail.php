@@ -24,9 +24,9 @@ class CreateOrderDetail extends Migration
 
             $table->bigIncrements('id');
             $table->string('invoice')->nullable();
-            $table->text('order_id')->nullable();
-            $table->text('client_id')->nullable();
-            $table->text('talent_id')->nullable();
+            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('talent_id');
             $table->integer('price_service')->nullable()->unsigned();
             $table->integer('qty_service')->nullable()->unsigned();
             $table->date('start_service')->nullable();
@@ -37,6 +37,20 @@ class CreateOrderDetail extends Migration
             $table->timestamps();
             // membuat igunakan untuk menyimpan detail dari pembelian yang
             // dilakukan oleh client
+            $table->foreign('client_id')
+            ->references('id')->on('client')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('order_id')
+            ->references('id')->on('order_service')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('talent_id')
+            ->references('id')->on('talent')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

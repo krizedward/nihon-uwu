@@ -5,11 +5,11 @@
     <!-- service -->
     <div class="form-group">
         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Service </label>
-        <div class="col-sm-9">
-            <select name="service" class="col-xs-11 col-sm-6" id="form-field-select-1">
-                <option value="" disabled selected>Pilih Service..</option>
-                @foreach($serviceTalent as $data)
-                <option value="{{ $data->id }}">{{ $data->service_sort }} | {{ $data->service_name }} - {{ $data->duration }}</option>
+        <div class="col-sm-9">  
+            <select name="talent" class="col-xs-11 col-sm-6" id="form-field-select-1">
+                <option value="" disabled selected>Pilih Talent..</option>
+                @foreach($selectTalent as $data)
+                <option value="{{ $data->id }}">{{ $data->nickname }} | {{ $data->user->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -27,32 +27,40 @@
             </div>
         </div>
     </div>
-    <!-- tanggal-end -->
-    <!-- temp-order -->
-    <div class="form-group">
-        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Talent </label>
-        <div class="col-sm-9">
-            <input type="text" name="jumlah" id="spinner1" class="spinbox-input form-control text-center">
-        </div>
-    </div>
+    
     <!-- talent -->
     <div class="form-group">
-        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Talent </label>
-        <div class="col-sm-9">
-            <select name="talent" class="col-xs-11 col-sm-6" id="form-field-select-1">
-                <option value="" disabled selected>Pilih Talent..</option>
-                @foreach($selectTalent as $data)
-                <option value="{{ $data->id }}">{{ $data->nickname }} | {{ $data->user->name }}</option>
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Service </label>
+        <div class="col-sm-4">
+            <select name="service" class="col-xs-8 col-sm-5" id="form-field-select-1">
+                <option value="" disabled selected>Pilih Service..</option>
+                @foreach($serviceTalent as $data)
+                <option value="{{ $data->id }}">{{ $data->service_sort }} | {{ $data->service_name }} - {{ $data->duration }}</option>
                 @endforeach
             </select>
+        </div>
+        <div class="col-sm-4 col-xs-2">
+            <input type="text" name="jumlah" id="spinner1" class="col-xs-3 spinbox-input form-control text-center">
         </div>
     </div>
 
     <!-- client -->
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Client </label>
         <div class="col-sm-9">
             <input type="text" name="client" id="form-field-1" class="col-xs-11 col-sm-6" placeholder="Nama Client.." />
+        </div>
+    </div> -->
+
+    <div class="form-group">
+        <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Client </label>
+        <div class="col-sm-9">
+            <select name="client" class="col-xs-11 col-sm-6" id="form-field-select-1">
+                <option value="" disabled selected>Pilih Client..</option>
+                @foreach($selectClient as $data)
+                <option value="{{ $data->id }}">{{ $data->nickname }} | {{ $data->user->name }}</option>
+                @endforeach
+            </select>
         </div>
     </div>
 

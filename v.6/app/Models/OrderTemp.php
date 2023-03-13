@@ -27,4 +27,10 @@ class OrderTemp extends Model
         // has many problem
         return $this->belongsTo('App\Models\Talent','talent_id','id');
     }
+
+    public function client()
+    {
+        // has many problem
+        return $this->belongsTo('App\Models\Client','client_id','id');
+    }
 }
