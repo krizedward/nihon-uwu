@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PaymentTalent;
+use App\Models\PaymentClient;
 use App\Models\ServiceTalent;
 use App\Models\OrderService;
 use App\Models\OrderTemp;
@@ -13,7 +14,7 @@ use App\Models\Client;
 
 class AdminController extends Controller
 {
-    
+
     public function paymentTalentIndex() // membuat perfunction untuk route website
     {
         try {
@@ -31,13 +32,14 @@ class AdminController extends Controller
         try {
 
             return "hello";
+
         } catch (\Exception $e) {
             $error = $e->getMessage();
             return $error;
         }
     }
 
-    public function paymentTalentCreate()
+    public function paymentTalentCreate() //membuat form untuk pembayaran talent
     {
         try {
 
@@ -50,30 +52,43 @@ class AdminController extends Controller
         }
     }
 
-    public function paymentTalentStore(Request $request) // membuat pembayaran talent
+    public function paymentTalentStore(Request $request) // membuat proses pembayaran talent
     {
         try {
 
-            $service = ServiceTalent::findOrFail($request->service);
+            $serviceOrder = OrderService::findOrFail($request->service);
+            $detailOrder = OrderDetail::findOrFail($serviceOrder->invoice);
 
-            $talentFee = $service->price_service * (80 / 100);
-            $adminFee = $service->price_service * (20 / 100);
-            $endService = $service->duration;
+            $talentFee = $serviceOrder->total_payment * (80 / 100);
+            $adminFee = $serviceOrder->total_payment * (20 / 100);
+            // $endService = $serviceOrder->duration;
 
             PaymentTalent::create([
-                'talent_name' => $request->talent,
-                'service' => $service->service_name,
-                'start_service' => $request->start_service,
-                'end_service' => $endService,
-                'proof_of_transfer' => 'proof_of_transfer',
-                'client_name' => $request->client,
-                'price_service' => $service->price_service,
+                // 'talent_name' => $request->talent,
+                // 'service' => $service->service_name,
+                // 'start_service' => $request->start_service,
+                // 'end_service' => $endService,
+                // 'proof_of_transfer' => 'proof_of_transfer',
+                // 'client_name' => $request->client,
+                // 'price_service' => $service->price_service,
+                // 'talent_fee' => $talentFee,
+                // 'admin_fee' => $adminFee,
+                // 'status' => 'status',
+
+                'kode_id' => 'PY01',
+                'kode_nomor' => 'masih belum betul',
+                'order_id' => $serviceOrder->idService, //sort dengan nama id order
+                'talent_nama' => $detailOrder->talent->nama, // nama talent
+                'client_nama' => $detailOrder->client->nama, // nama client
+                'total_bayar' => $serviceOrder->total_payment,
                 'talent_fee' => $talentFee,
                 'admin_fee' => $adminFee,
-                'status' => 'status',
+                'bukti_bayar' => 'masih belum betul',
+                'status_bayar' => 'sukses',
             ]);
 
             return redirect()->route('admin.tp.index');
+            
         } catch (\Exception $e) {
             $error = $e->getMessage();
             return $error;
@@ -159,15 +174,15 @@ class AdminController extends Controller
         }
     }
 
-    public function orderServiceCreate(Request $request) // proses form service order
+    public function orderServiceCreate(Request $request) // route('admin.os.create') proses form service order
     {
         try {
             //
-            $latest = OrderService::orderBy('id','DESC')->first();
-            if(!$latest) {
+            $latest = OrderService::orderBy('id', 'DESC')->first();
+            if (!$latest) {
                 $invoice = '0001';
             } else {
-                $invoice = sprintf('%04d',$latest->invoice + 1);
+                $invoice = sprintf('%04d', $latest->invoice + 1);
             }
 
             $temp_order = OrderTemp::all();
@@ -179,7 +194,7 @@ class AdminController extends Controller
                 'total_payment' => $request->total,
                 'status_order' => 'Pending',
             ]);
-            
+
             foreach ($temp_order as $item) {
                 OrderDetail::create([
                     'invoice' => $invoice,
@@ -195,7 +210,38 @@ class AdminController extends Controller
                 ]);
             }
 
-            OrderTemp::query()->truncate();
+            OrderTemp::query()->truncate(); //menghapus semua data yang ada
+
+            $lastOrder = OrderService::latest()->first();
+            $talentFee = $lastOrder->total_payment * (80 / 100);
+            $adminFee = $lastOrder->total_payment * (20 / 100);
+
+            PaymentTalent::create([
+                'kode_id' => 'PT11',
+                'kode_nomor' => '2202213',
+                'order_id' => $lastOrder->id,
+                'talent_nama' => 'Gwen',
+                'client_nama' => 'Edward',
+                'total_bayar' => $lastOrder->total_payment,
+                'talent_fee' => $talentFee,
+                'admin_fee' => $adminFee,
+                'bukti_bayar' => 'text.jpg',
+                'status_bayar'  => 'pending'
+            ]);
+
+            // PaymentClient::create([
+            //     'client_id',
+            //     'username_client',
+            //     'nama_client',
+            //     'noresi_bayar',
+            //     'namaterang_bayar',
+            //     'tanggal_bayar',
+            //     'bukti_bayar',
+            //     'metode_bayar',
+            //     'metodedetail_bayar',
+            //     'status_bayar',
+            // ]);
+
             return redirect()->route('admin.os.index');
             // 
         } catch (\Exception $e) {
@@ -206,16 +252,17 @@ class AdminController extends Controller
 
     public function orderSeviceDetail($invoice) // menampilkan data di service tabel
     {
-        try{
+        try {
             //
             $paymentTalent = PaymentTalent::all();
+            $paymentClient = PaymentClient::all();
             $orderDetail = OrderDetail::where('invoice', $invoice)->get();
-            
-            return view('admin.order_service_detail',compact(
+
+            return view('admin.order_service_detail', compact(
                 'paymentTalent',
+                'paymentClient',
                 'orderDetail',
             ));
-
         } catch (\Exception $e) {
             $error = $e->getMessage();
             return $error;

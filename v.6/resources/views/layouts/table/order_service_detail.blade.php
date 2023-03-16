@@ -670,7 +670,7 @@
 						</thead>
 
 						<tbody>
-							@foreach($paymentTalent as $data)
+							@foreach($paymentClient as $data)
 							<tr>
 								<td class="center">
 									{{ $data->id }}

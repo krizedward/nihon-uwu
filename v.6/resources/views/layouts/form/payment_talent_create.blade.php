@@ -69,3 +69,9 @@
 		</div>
 	</div>
 </form>
+
+<form action="#" method="post" enctype="multipart/form-data">
+	<input type="hidden" class="kode_id">
+	<input type="hidden" class="kode_nomor">
+	<input type="hidden" class="order_id">
+</form><!-- form baru -->

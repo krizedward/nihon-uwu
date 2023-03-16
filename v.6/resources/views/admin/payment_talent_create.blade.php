@@ -58,7 +58,7 @@
 
 <!-- main -->
 @section('main')
-@include('layouts/form/payment_talent_create')
+    @include('layouts/form/payment_talent_create')
 @endsection
 
 <!-- script -->
