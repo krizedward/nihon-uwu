@@ -1,221 +1,3 @@
-<!-- <table id="simple-table" class="table  table-bordered table-hover">
-	<thead>
-		<tr>
-			<th class="center">
-				<label class="pos-rel">
-					<input type="checkbox" class="ace" />
-					<span class="lbl"></span>
-				</label>
-			</th>
-			<th class="detail-col">Details</th>
-			<th>Domain</th>
-			<th>Price</th>
-			<th class="hidden-480">Clicks</th>
-
-			<th>
-				<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-				Update
-			</th>
-			<th class="hidden-480">Status</th>
-
-			<th></th>
-		</tr>
-	</thead>
-
-	<tbody>
-		
-		<tr>
-			<td class="center">
-				<label class="pos-rel">
-					<input type="checkbox" class="ace" />
-					<span class="lbl"></span>
-				</label>
-			</td>
-
-			<td class="center">
-				<div class="action-buttons">
-					<a href="#" class="green bigger-140 show-details-btn" title="Show Details">
-						<i class="ace-icon fa fa-angle-double-down"></i>
-						<span class="sr-only">Details</span>
-					</a>
-				</div>
-			</td>
-
-			<td>
-				<a href="#">ace.com</a>
-			</td>
-			<td>$45</td>
-			<td class="hidden-480">3,330</td>
-			<td>Feb 12</td>
-
-			<td class="hidden-480">
-				<span class="label label-sm label-warning">Expiring</span>
-			</td>
-
-			<td>
-				<div class="hidden-sm hidden-xs btn-group">
-					<button class="btn btn-xs btn-success">
-						<i class="ace-icon fa fa-check bigger-120"></i>
-					</button>
-
-					<button class="btn btn-xs btn-info">
-						<i class="ace-icon fa fa-pencil bigger-120"></i>
-					</button>
-
-					<button class="btn btn-xs btn-danger">
-						<i class="ace-icon fa fa-trash-o bigger-120"></i>
-					</button>
-
-					<button class="btn btn-xs btn-warning">
-						<i class="ace-icon fa fa-flag bigger-120"></i>
-					</button>
-				</div>
-
-				<div class="hidden-md hidden-lg">
-					<div class="inline pos-rel">
-						<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-							<i class="ace-icon fa fa-cog icon-only bigger-110"></i>
-						</button>
-
-						<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-							<li>
-								<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-									<span class="blue">
-										<i class="ace-icon fa fa-search-plus bigger-120"></i>
-									</span>
-								</a>
-							</li>
-
-							<li>
-								<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-									<span class="green">
-										<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
-									</span>
-								</a>
-							</li>
-
-							<li>
-								<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-									<span class="red">
-										<i class="ace-icon fa fa-trash-o bigger-120"></i>
-									</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</td>
-		</tr>
-		
-		<tr class="detail-row">
-			<td colspan="8">
-				<div class="table-detail">
-					<div class="row">
-						<div class="col-xs-12 col-sm-2">
-							<div class="text-center">
-								<img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="assets/images/avatars/profile-pic.jpg" />
-								<br />
-								<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
-									<div class="inline position-relative">
-										<a class="user-title-label" href="#">
-											<i class="ace-icon fa fa-circle light-green"></i>
-											&nbsp;
-											<span class="white">Alex M. Doe</span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-xs-12 col-sm-7">
-							<div class="space visible-xs"></div>
-
-							<div class="profile-user-info profile-user-info-striped">
-								<div class="profile-info-row">
-									<div class="profile-info-name"> Username </div>
-
-									<div class="profile-info-value">
-										<span>alexdoe</span>
-									</div>
-								</div>
-
-								<div class="profile-info-row">
-									<div class="profile-info-name"> Location </div>
-
-									<div class="profile-info-value">
-										<i class="fa fa-map-marker light-orange bigger-110"></i>
-										<span>Netherlands, Amsterdam</span>
-									</div>
-								</div>
-
-								<div class="profile-info-row">
-									<div class="profile-info-name"> Age </div>
-
-									<div class="profile-info-value">
-										<span>38</span>
-									</div>
-								</div>
-
-								<div class="profile-info-row">
-									<div class="profile-info-name"> Joined </div>
-
-									<div class="profile-info-value">
-										<span>2010/06/20</span>
-									</div>
-								</div>
-
-								<div class="profile-info-row">
-									<div class="profile-info-name"> Last Online </div>
-
-									<div class="profile-info-value">
-										<span>3 hours ago</span>
-									</div>
-								</div>
-
-								<div class="profile-info-row">
-									<div class="profile-info-name"> About Me </div>
-
-									<div class="profile-info-value">
-										<span>Bio</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-xs-12 col-sm-3">
-							<div class="space visible-xs"></div>
-							<h4 class="header blue lighter less-margin">Send a message to Alex</h4>
-
-							<div class="space-6"></div>
-
-							<form>
-								<fieldset>
-									<textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
-								</fieldset>
-
-								<div class="hr hr-dotted"></div>
-
-								<div class="clearfix">
-									<label class="pull-left">
-										<input type="checkbox" class="ace" />
-										<span class="lbl"> Email me a copy</span>
-									</label>
-
-									<button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
-										Submit
-										<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
-									</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</td>
-		</tr>
-
-	</tbody>
-</table> -->
-
 <div class="row">
 	<div class="col-xs-12 col-sm-6">
 		<div class="widget-box">
@@ -235,17 +17,15 @@
 						<thead>
 							<tr>
 								<th class="detail-col">Details</th>
+								<th>Talent</th>
 								<th>Client</th>
-								<th>Subtotal</th>
 								<th class="hidden-480">Clicks</th>
 
-								<th>
-									<i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
-									Payment
+								<th> Status
+									<!-- <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i> -->
+									<!-- Status -->
 								</th>
-								<th class="hidden-480">Status</th>
-
-								<th></th>
+								<!-- <th class="hidden-480">Status</th> -->
 							</tr>
 						</thead>
 
@@ -262,52 +42,14 @@
 								</td>
 
 								<td>
-									{{ $data->client->user->name }}
+									{{ $data->talent->nickname }}
 								</td>
-								<td>{{ $data->id }}</td>
+								<td>{{ $data->client->user->name }}</td>
 								<td class="hidden-480">3,330</td>
-								<td>Pending</td>
+								<td>{{ $data->status_service}}</td>
 
 								<td class="hidden-480">
 									<span class="label label-sm label-warning">Expiring</span>
-								</td>
-
-								<td>
-									<div class="hidden-sm hidden-xs btn-group">
-										<button class="btn btn-xs btn-success">
-											<i class="ace-icon fa fa-check bigger-120"></i>
-										</button>
-
-										<button class="btn btn-xs btn-info">
-											<i class="ace-icon fa fa-pencil bigger-120"></i>
-										</button>
-
-										<button class="btn btn-xs btn-danger">
-											<i class="ace-icon fa fa-trash-o bigger-120"></i>
-										</button>
-
-										<button class="btn btn-xs btn-warning">
-											<i class="ace-icon fa fa-flag bigger-120"></i>
-										</button>
-									</div>
-
-									<div class="hidden-md hidden-lg">
-										<div class="inline pos-rel">
-											<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-												<i class="ace-icon fa fa-cog icon-only bigger-110"></i>
-											</button>
-
-											<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-												<li>
-													<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-														<span class="blue">
-															<i class="ace-icon fa fa-eye bigger-120"></i>
-														</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</div>
 								</td>
 							</tr>
 							<!-- untuk detail tabel umum -->
@@ -319,12 +61,12 @@
 												<div class="text-center">
 													<img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="assets/images/avatars/profile-pic.jpg" />
 													<br />
-													<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+													<div class="width-80 label label-info label-xlg">
 														<div class="inline position-relative">
 															<a class="user-title-label" href="#">
 																<i class="ace-icon fa fa-circle light-green"></i>
 																&nbsp;
-																<span class="white">Alex M. Doe</span>
+																<span class="white">Service : {{ $data->serviceTalent->service_name }}</span>
 															</a>
 														</div>
 													</div>
@@ -336,81 +78,54 @@
 
 												<div class="profile-user-info profile-user-info-striped">
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Username </div>
+														<div class="profile-info-name"> Jenis Dating </div>
 
 														<div class="profile-info-value">
-															<span>alexdoe</span>
+															<span>{{ $data->serviceTalent->service_sort }}</span>
 														</div>
 													</div>
 
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Location </div>
+														<div class="profile-info-name"> Durasi Dating </div>
 
 														<div class="profile-info-value">
-															<i class="fa fa-map-marker light-orange bigger-110"></i>
-															<span>Netherlands, Amsterdam</span>
+															<span>{{ $data->serviceTalent->duration }}</span>
 														</div>
 													</div>
 
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Age </div>
+														<div class="profile-info-name"> Tanggal Mulai </div>
 
 														<div class="profile-info-value">
-															<span>38</span>
+															<span>2023-03-16</span>
 														</div>
 													</div>
 
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Joined </div>
+														<div class="profile-info-name"> Tanggal Selesai </div>
 
 														<div class="profile-info-value">
-															<span>2010/06/20</span>
+															<span>2023-03-16</span>
 														</div>
 													</div>
 
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Last Online </div>
+														<div class="profile-info-name"> Status </div>
 
 														<div class="profile-info-value">
-															<span>3 hours ago</span>
+															<span>{{ $data->status_service }}</span>
 														</div>
 													</div>
 
 													<div class="profile-info-row">
-														<div class="profile-info-name"> About Me </div>
+														<div class="profile-info-name"> Harga </div>
 
 														<div class="profile-info-value">
-															<span>Bio</span>
+															<span>{{ $data->price_service }}</span>
 														</div>
 													</div>
+
 												</div>
-											</div>
-
-											<div class="col-xs-12 col-sm-3">
-												<div class="space visible-xs"></div>
-												<h4 class="header blue lighter less-margin">Send a message to Alex</h4>
-
-												<div class="space-6"></div>
-
-												<form>
-													<fieldset>
-														<textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
-													</fieldset>
-
-													<div class="hr hr-dotted"></div>
-
-													<div class="clearfix">
-														<label class="pull-left">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"> Email me a copy</span>
-														</label>
-
-														<button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
-															Submit
-															<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
-														</button>
-													</div>
-												</form>
 											</div>
 										</div>
 									</div>
@@ -441,7 +156,6 @@
 					<table id="simple-table" class="table  table-bordered table-hover">
 						<thead>
 							<tr>
-								<th class="center">#</th>
 								<th class="detail-col">Details</th>
 								<th>Client</th>
 								<th>Subtotal</th>
@@ -452,18 +166,12 @@
 									Payment
 								</th>
 								<th class="hidden-480">Status</th>
-
-								<th></th>
 							</tr>
 						</thead>
 
 						<tbody>
-							@foreach($paymentTalent as $data)
+							@foreach($paymentClient as $data)
 							<tr>
-								<td class="center">
-									{{ $data->id }}
-								</td>
-
 								<td class="center">
 									<div class="action-buttons">
 										<a href="#" class="green bigger-140 show-details-btn" title="Show Details">
@@ -472,54 +180,13 @@
 										</a>
 									</div>
 								</td>
-
-								<td>
-									{{ $data->talent_name }}
-								</td>
-								<td>{{ $data->talent_fee }}</td>
-								<td class="hidden-480">3,330</td>
-								<td>Pending</td>
+								<td>{{ $data->client_id }}</td>
+								<!-- <td class="hidden-480">3,330</td> -->
+								<td>400000</td>
+								<td>{{ $data->status_bayar }}</td>
 
 								<td class="hidden-480">
 									<span class="label label-sm label-warning">Expiring</span>
-								</td>
-
-								<td>
-									<div class="hidden-sm hidden-xs btn-group">
-										<button class="btn btn-xs btn-success">
-											<i class="ace-icon fa fa-check bigger-120"></i>
-										</button>
-
-										<button class="btn btn-xs btn-info">
-											<i class="ace-icon fa fa-pencil bigger-120"></i>
-										</button>
-
-										<button class="btn btn-xs btn-danger">
-											<i class="ace-icon fa fa-trash-o bigger-120"></i>
-										</button>
-
-										<button class="btn btn-xs btn-warning">
-											<i class="ace-icon fa fa-flag bigger-120"></i>
-										</button>
-									</div>
-
-									<div class="hidden-md hidden-lg">
-										<div class="inline pos-rel">
-											<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-												<i class="ace-icon fa fa-cog icon-only bigger-110"></i>
-											</button>
-
-											<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-												<li>
-													<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-														<span class="blue">
-															<i class="ace-icon fa fa-eye bigger-120"></i>
-														</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</div>
 								</td>
 							</tr>
 							<!-- untuk detail tabel umum -->
@@ -527,103 +194,36 @@
 								<td colspan="8">
 									<div class="table-detail">
 										<div class="row">
-											<div class="col-xs-12 col-sm-2">
-												<div class="text-center">
-													<img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="assets/images/avatars/profile-pic.jpg" />
-													<br />
-													<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
-														<div class="inline position-relative">
-															<a class="user-title-label" href="#">
-																<i class="ace-icon fa fa-circle light-green"></i>
-																&nbsp;
-																<span class="white">Alex M. Doe</span>
-															</a>
-														</div>
-													</div>
-												</div>
-											</div>
-
 											<div class="col-xs-12 col-sm-7">
 												<div class="space visible-xs"></div>
 
 												<div class="profile-user-info profile-user-info-striped">
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Username </div>
+														<div class="profile-info-name"> Total Bayar </div>
 
 														<div class="profile-info-value">
-															<span>alexdoe</span>
+															<span>400000</span>
 														</div>
 													</div>
 
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Location </div>
+														<div class="profile-info-name"> Kode </div>
 
 														<div class="profile-info-value">
-															<i class="fa fa-map-marker light-orange bigger-110"></i>
-															<span>Netherlands, Amsterdam</span>
+															<span>{{ $data->kode_id }}-{{ $data->kode_nomor }}</span>
 														</div>
 													</div>
 
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Age </div>
+														<div class="profile-info-name"> Status Bayar </div>
 
 														<div class="profile-info-value">
-															<span>38</span>
-														</div>
-													</div>
-
-													<div class="profile-info-row">
-														<div class="profile-info-name"> Joined </div>
-
-														<div class="profile-info-value">
-															<span>2010/06/20</span>
-														</div>
-													</div>
-
-													<div class="profile-info-row">
-														<div class="profile-info-name"> Last Online </div>
-
-														<div class="profile-info-value">
-															<span>3 hours ago</span>
-														</div>
-													</div>
-
-													<div class="profile-info-row">
-														<div class="profile-info-name"> About Me </div>
-
-														<div class="profile-info-value">
-															<span>Bio</span>
+															<span>{{ $data->status_bayar }}</span>
 														</div>
 													</div>
 												</div>
 											</div>
 
-											<div class="col-xs-12 col-sm-3">
-												<div class="space visible-xs"></div>
-												<h4 class="header blue lighter less-margin">Send a message to Alex</h4>
-
-												<div class="space-6"></div>
-
-												<form>
-													<fieldset>
-														<textarea class="width-100" resize="none" placeholder="Type something…"></textarea>
-													</fieldset>
-
-													<div class="hr hr-dotted"></div>
-
-													<div class="clearfix">
-														<label class="pull-left">
-															<input type="checkbox" class="ace" />
-															<span class="lbl"> Email me a copy</span>
-														</label>
-
-														<button class="pull-right btn btn-sm btn-primary btn-white btn-round" type="button">
-															Submit
-															<i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
-														</button>
-													</div>
-												</form>
-											</div>
 										</div>
 									</div>
 								</td>
@@ -653,10 +253,9 @@
 					<table id="simple-table" class="table  table-bordered table-hover">
 						<thead>
 							<tr>
-								<th class="center">#</th>
 								<th class="detail-col">Details</th>
 								<th>Telent</th>
-								<th>Subtotal</th>
+								<th>Fee Talent</th>
 								<th class="hidden-480">Clicks</th>
 
 								<th>
@@ -664,18 +263,12 @@
 									Payment
 								</th>
 								<th class="hidden-480">Status</th>
-
-								<th></th>
 							</tr>
 						</thead>
 
 						<tbody>
-							@foreach($paymentClient as $data)
+							@foreach($paymentTalent as $data)
 							<tr>
-								<td class="center">
-									{{ $data->id }}
-								</td>
-
 								<td class="center">
 									<div class="action-buttons">
 										<a href="#" class="green bigger-140 show-details-btn" title="Show Details">
@@ -686,7 +279,7 @@
 								</td>
 
 								<td>
-									{{ $data->talent_name }}
+									{{ $data->talent_nama }}
 								</td>
 								<td>{{ $data->talent_fee }}</td>
 								<td class="hidden-480">3,330</td>
@@ -695,51 +288,13 @@
 								<td class="hidden-480">
 									<span class="label label-sm label-warning">Expiring</span>
 								</td>
-
-								<td>
-									<div class="hidden-sm hidden-xs btn-group">
-										<button class="btn btn-xs btn-success">
-											<i class="ace-icon fa fa-check bigger-120"></i>
-										</button>
-
-										<button class="btn btn-xs btn-info">
-											<i class="ace-icon fa fa-pencil bigger-120"></i>
-										</button>
-
-										<button class="btn btn-xs btn-danger">
-											<i class="ace-icon fa fa-trash-o bigger-120"></i>
-										</button>
-
-										<button class="btn btn-xs btn-warning">
-											<i class="ace-icon fa fa-flag bigger-120"></i>
-										</button>
-									</div>
-
-									<div class="hidden-md hidden-lg">
-										<div class="inline pos-rel">
-											<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
-												<i class="ace-icon fa fa-cog icon-only bigger-110"></i>
-											</button>
-
-											<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-												<li>
-													<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-														<span class="blue">
-															<i class="ace-icon fa fa-eye bigger-120"></i>
-														</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</td>
 							</tr>
 							<!-- untuk detail tabel umum -->
 							<tr class="detail-row">
 								<td colspan="8">
 									<div class="table-detail">
 										<div class="row">
-											<div class="col-xs-12 col-sm-2">
+											<!-- <div class="col-xs-12 col-sm-2">
 												<div class="text-center">
 													<img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="assets/images/avatars/profile-pic.jpg" />
 													<br />
@@ -753,64 +308,64 @@
 														</div>
 													</div>
 												</div>
-											</div>
+											</div> -->
 
 											<div class="col-xs-12 col-sm-7">
 												<div class="space visible-xs"></div>
 
 												<div class="profile-user-info profile-user-info-striped">
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Username </div>
+														<div class="profile-info-name"> Total Fee </div>
 
 														<div class="profile-info-value">
-															<span>alexdoe</span>
+															<span>{{ $data->total_bayar }}</span>
 														</div>
 													</div>
 
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Location </div>
+														<div class="profile-info-name"> Talent Fee </div>
 
 														<div class="profile-info-value">
-															<i class="fa fa-map-marker light-orange bigger-110"></i>
-															<span>Netherlands, Amsterdam</span>
+															<span>{{ $data->talent_fee }}</span>
 														</div>
 													</div>
 
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Age </div>
+														<div class="profile-info-name"> Admin Fee </div>
 
 														<div class="profile-info-value">
-															<span>38</span>
+															<span>{{ $data->admin_fee }}</span>
 														</div>
 													</div>
 
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Joined </div>
+														<div class="profile-info-name"> Pembayaran </div>
 
 														<div class="profile-info-value">
-															<span>2010/06/20</span>
+															<span>Transfer</span>
 														</div>
 													</div>
 
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Last Online </div>
+														<div class="profile-info-name"> Tujuan Bayar </div>
 
 														<div class="profile-info-value">
-															<span>3 hours ago</span>
+															<span>Rek BCA 12345123123</span>
 														</div>
 													</div>
 
 													<div class="profile-info-row">
-														<div class="profile-info-name"> About Me </div>
+														<div class="profile-info-name"> Status Bayar </div>
 
 														<div class="profile-info-value">
-															<span>Bio</span>
+															<span>{{ $data->status_bayar }}</span>
 														</div>
 													</div>
+
 												</div>
 											</div>
 
-											<div class="col-xs-12 col-sm-3">
+											<!-- <div class="col-xs-12 col-sm-3">
 												<div class="space visible-xs"></div>
 												<h4 class="header blue lighter less-margin">Send a message to Alex</h4>
 
@@ -835,7 +390,7 @@
 														</button>
 													</div>
 												</form>
-											</div>
+											</div> -->
 										</div>
 									</div>
 								</td>

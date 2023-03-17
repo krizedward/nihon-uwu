@@ -14,6 +14,7 @@ class OrderTemp extends Model
 
     protected $fillable = [
         'client_id',
+        'servicetalent_id',
         'talent_id',
         'price_service',
         'qty_service',

@@ -24,6 +24,7 @@ class CreateOrderTemp extends Migration
 
             $table->bigIncrements('id');
             $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('servicetalent_id');
             $table->unsignedBigInteger('talent_id');
             $table->integer('price_service')->nullable()->unsigned();
             $table->integer('qty_service')->nullable()->unsigned();
@@ -41,6 +42,11 @@ class CreateOrderTemp extends Migration
 
             $table->foreign('client_id')
             ->references('id')->on('talent')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('servicetalent_id')
+            ->references('id')->on('service_talent')
             ->onUpdate('cascade')
             ->onDelete('cascade');
         });

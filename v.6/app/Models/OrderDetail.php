@@ -14,6 +14,7 @@ class OrderDetail extends Model
     protected $fillable = [
         'invoice',
         'order_id',
+        'servicetalent_id',
         'client_id',
         'talent_id',
         'price_service',
@@ -23,6 +24,12 @@ class OrderDetail extends Model
         'subtotal_service',
         'status_service',
     ];
+
+    public function orderService()
+    {
+        // has many problem
+        return $this->belongsTo('App\Models\OrderService','invoice','id');
+    }
 
     public function talent()
     {
@@ -34,5 +41,11 @@ class OrderDetail extends Model
     {
         // has many problem
         return $this->belongsTo('App\Models\Client','client_id','id');
+    }
+
+    public function serviceTalent()
+    {
+        // has many problem
+        return $this->belongsTo('App\Models\ServiceTalent','servicetalent_id','id');
     }
 }

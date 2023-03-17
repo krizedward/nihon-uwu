@@ -12,6 +12,8 @@ class PaymentClient extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
+        'kode_id',
+        'kode_nomor',
         'client_id',
         'username_client',
         'nama_client',

@@ -15,6 +15,8 @@ class CreatePaymentClient extends Migration
     {
         Schema::create('payment_client', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->text('kode_id')->nullable();
+            $table->text('kode_nomor')->nullable();
             $table->unsignedBigInteger('client_id');
             $table->text('username_client')->nullable();
             $table->text('nama_client')->nullable();
