@@ -59,7 +59,7 @@
 										<div class="row">
 											<div class="col-xs-12 col-sm-2">
 												<div class="text-center">
-													<img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="assets/images/avatars/profile-pic.jpg" />
+													<img height="150" class="thumbnail inline no-margin-bottom" alt="Domain Owner's Avatar" src="{{ asset('assets/images/avatars/profile-pic.jpg') }}" />
 													<br />
 													<div class="width-80 label label-info label-xlg">
 														<div class="inline position-relative">
@@ -77,6 +77,15 @@
 												<div class="space visible-xs"></div>
 
 												<div class="profile-user-info profile-user-info-striped">
+													
+													<div class="profile-info-row">
+														<div class="profile-info-name"> Harga </div>
+
+														<div class="profile-info-value">
+															<span>Rp. {{ number_format($data->price_service, 2, ",", ".") }}</span>
+														</div>
+													</div>
+
 													<div class="profile-info-row">
 														<div class="profile-info-name"> Jenis Dating </div>
 
@@ -114,14 +123,6 @@
 
 														<div class="profile-info-value">
 															<span>{{ $data->status_service }}</span>
-														</div>
-													</div>
-
-													<div class="profile-info-row">
-														<div class="profile-info-name"> Harga </div>
-
-														<div class="profile-info-value">
-															<span>{{ $data->price_service }}</span>
 														</div>
 													</div>
 
@@ -180,9 +181,9 @@
 										</a>
 									</div>
 								</td>
-								<td>{{ $data->client_id }}</td>
+								<td>{{ $data->nama_client }}</td>
 								<!-- <td class="hidden-480">3,330</td> -->
-								<td>400000</td>
+								<td>Rp. {{ number_format($data->orderService->total_payment, 2, ",", ".") }}</td>
 								<td>{{ $data->status_bayar }}</td>
 
 								<td class="hidden-480">
@@ -199,20 +200,20 @@
 
 												<div class="profile-user-info profile-user-info-striped">
 													<div class="profile-info-row">
-														<div class="profile-info-name"> Total Bayar </div>
-
-														<div class="profile-info-value">
-															<span>400000</span>
-														</div>
-													</div>
-
-													<div class="profile-info-row">
 														<div class="profile-info-name"> Kode </div>
 
 														<div class="profile-info-value">
 															<span>{{ $data->kode_id }}-{{ $data->kode_nomor }}</span>
 														</div>
-													</div>
+													</div><!-- kode payment -->
+
+													<div class="profile-info-row">
+														<div class="profile-info-name"> Total Bayar </div>
+
+														<div class="profile-info-value">
+															<span>Rp. {{ number_format($data->orderService->total_payment, 2, ",", ".") }}</span>
+														</div>
+													</div><!-- harga payment -->
 
 													<div class="profile-info-row">
 														<div class="profile-info-name"> Status Bayar </div>
@@ -220,7 +221,7 @@
 														<div class="profile-info-value">
 															<span>{{ $data->status_bayar }}</span>
 														</div>
-													</div>
+													</div><!-- status payment -->
 												</div>
 											</div>
 
@@ -281,7 +282,7 @@
 								<td>
 									{{ $data->talent_nama }}
 								</td>
-								<td>{{ $data->talent_fee }}</td>
+								<td>Rp. {{ number_format($data->talent_fee, 2, ",", ".") }}</td>
 								<td class="hidden-480">3,330</td>
 								<td>Pending</td>
 
@@ -315,28 +316,36 @@
 
 												<div class="profile-user-info profile-user-info-striped">
 													<div class="profile-info-row">
+														<div class="profile-info-name"> Kode </div>
+
+														<div class="profile-info-value">
+															<span>{{ $data->kode_id }}-{{ $data->kode_nomor }}</span>
+														</div>
+													</div><!-- kode payment -->
+
+													<div class="profile-info-row">
 														<div class="profile-info-name"> Total Fee </div>
 
 														<div class="profile-info-value">
-															<span>{{ $data->total_bayar }}</span>
+															<span>Rp. {{ number_format($data->total_bayar, 2, ",", ".") }}</span>
 														</div>
-													</div>
+													</div><!-- total payment -->
 
 													<div class="profile-info-row">
 														<div class="profile-info-name"> Talent Fee </div>
 
 														<div class="profile-info-value">
-															<span>{{ $data->talent_fee }}</span>
+															<span>Rp. {{ number_format($data->talent_fee, 2, ",", ".") }}</span>
 														</div>
-													</div>
+													</div><!-- talent fee payment -->
 
 													<div class="profile-info-row">
 														<div class="profile-info-name"> Admin Fee </div>
 
 														<div class="profile-info-value">
-															<span>{{ $data->admin_fee }}</span>
+															<span>Rp. {{ number_format($data->admin_fee, 2, ",", ".") }}</span>
 														</div>
-													</div>
+													</div><!-- talent fee payment -->
 
 													<div class="profile-info-row">
 														<div class="profile-info-name"> Pembayaran </div>
@@ -346,13 +355,13 @@
 														</div>
 													</div>
 
-													<div class="profile-info-row">
+													<!-- <div class="profile-info-row">
 														<div class="profile-info-name"> Tujuan Bayar </div>
 
 														<div class="profile-info-value">
 															<span>Rek BCA 12345123123</span>
 														</div>
-													</div>
+													</div> -->
 
 													<div class="profile-info-row">
 														<div class="profile-info-name"> Status Bayar </div>

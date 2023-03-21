@@ -35,3 +35,9 @@ Route::post('admin/order/temp', 'AdminController@orderTempCreate')->name('admin.
 Route::delete('admin/order/temp/delete/{idTemp}', 'AdminController@orderTempDelete')->name('admin.ot.delete');
 Route::post('admin/order/service/create', 'AdminController@orderServiceCreate')->name('admin.os.create'); //done proses
 Route::get('admin/order/service/detail/{id}', 'AdminController@orderSeviceDetail')->name('admin.os.detail');
+
+// Route::post('/upload', function(Request $request) {
+//     $path = $request->file('image')->store('public/images');
+//     return $path;
+// });
+// untuk menyimpan di storage

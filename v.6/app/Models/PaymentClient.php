@@ -14,6 +14,7 @@ class PaymentClient extends Model
     protected $fillable = [
         'kode_id',
         'kode_nomor',
+        'order_id',
         'client_id',
         'username_client',
         'nama_client',
@@ -29,5 +30,10 @@ class PaymentClient extends Model
     public function client()
     {
         return $this->belongsTo('App\Models\Client', 'client_id','id'); //,'client_id','id'
+    }
+
+    public function orderService()
+    {
+        return $this->belongsTo('App\Models\OrderService', 'order_id','id'); //,'client_id','id'
     }
 }

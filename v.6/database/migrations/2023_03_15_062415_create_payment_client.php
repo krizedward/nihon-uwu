@@ -17,6 +17,7 @@ class CreatePaymentClient extends Migration
             $table->bigIncrements('id');
             $table->text('kode_id')->nullable();
             $table->text('kode_nomor')->nullable();
+            $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('client_id');
             $table->text('username_client')->nullable();
             $table->text('nama_client')->nullable();
@@ -31,6 +32,11 @@ class CreatePaymentClient extends Migration
 
             $table->foreign('client_id')
             ->references('id')->on('client')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('order_id')
+            ->references('id')->on('order_service')
             ->onUpdate('cascade')
             ->onDelete('cascade');
         });

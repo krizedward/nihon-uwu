@@ -12,6 +12,7 @@ use App\Models\OrderDetail;
 use App\Models\Talent;
 use App\Models\Client;
 use Carbon\Carbon;
+use Spatie\ImageOptimizer\OptimizerChainFactory;
 
 class AdminController extends Controller
 {
@@ -180,6 +181,15 @@ class AdminController extends Controller
     {
         try {
             //
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $path = public_path('images/' . $filename);
+
+            $image->move(public_path('images'), $filename);
+
+            $optimizerChain = OptimizerChainFactory::create();
+            $optimizerChain->optimize($path); //menyimpan foto
+            //
             $latest = OrderService::orderBy('id', 'DESC')->first();
             if (!$latest) {
                 $invoice = '0001';
@@ -189,36 +199,19 @@ class AdminController extends Controller
 
             $temp_order = OrderTemp::all();
             $data_temporder = OrderTemp::latest()->first();
-            
-            //start_id
+
             $date = Carbon::now()->format('Ymd'); // format tanggal YYYYmmdd
-            $lastId = PaymentClient::orderBy('created_at', 'desc')->first();
+            $lastId = PaymentTalent::orderBy('created_at', 'desc')->first();
 
-            if (!$lastId) {
-                $newIdNumber = $date.'00001';
-            } else {
-                $lastIdNumber = substr($lastId->kode_nomor, -13); // ambil tiga digit terakhir dari ID terakhir
-                $newIdNumber = str_pad($lastIdNumber + 1, 13, '0', STR_PAD_LEFT); // tambahkan 1 dan tambahkan 0 di depan jika kurang dari 3 digit
-            }
-
-            $newId = $newIdNumber; //end id
-
-            PaymentClient::create([ // proses membuat data didalam order
-                'kode_id' => 'PC11',
-                'kode_nomor' => $newId,
-                'client_id' => $data_temporder->client_id,
-                'username_client'=> $data_temporder->client->nickname,
-                'nama_client' => $data_temporder->client->user->name,
-                'status_bayar' => 'pending',
-            ]);
-
-            $order = OrderService::create([
+            OrderService::create([
                 'invoice' => $invoice,
                 'start_service' => $date,
                 'end_service' => $date,
                 'total_payment' => $request->total,
                 'status_order' => 'pending',
             ]);
+
+            $order =  OrderService::orderBy('id', 'DESC')->first();
 
             foreach ($temp_order as $item) {
                 OrderDetail::create([
@@ -257,7 +250,7 @@ class AdminController extends Controller
             PaymentTalent::create([
                 'kode_id' => 'PT11',
                 'kode_nomor' => $newId,
-                'order_id' => $lastOrder->id,
+                'order_id' => $order->id,
                 'talent_nama' => $data_temporder->talent->nickname,
                 'client_nama' => $data_temporder->client->user->name,
                 'total_bayar' => $lastOrder->total_payment,
@@ -265,6 +258,29 @@ class AdminController extends Controller
                 'admin_fee' => $adminFee,
                 'bukti_bayar' => null,
                 'status_bayar'  => 'pending'
+            ]);
+
+            //start_id
+            $date = Carbon::now()->format('Ymd'); // format tanggal YYYYmmdd
+            $lastId = PaymentClient::orderBy('created_at', 'desc')->first();
+
+            if (!$lastId) {
+                $newIdNumber = $date.'00001';
+            } else {
+                $lastIdNumber = substr($lastId->kode_nomor, -13); // ambil tiga digit terakhir dari ID terakhir
+                $newIdNumber = str_pad($lastIdNumber + 1, 13, '0', STR_PAD_LEFT); // tambahkan 1 dan tambahkan 0 di depan jika kurang dari 3 digit
+            }
+
+            $newId = $newIdNumber; //end id
+
+            PaymentClient::create([ // proses membuat data didalam order
+                'kode_id' => 'PC11',
+                'kode_nomor' => $newId,
+                'order_id' => $order->id,
+                'client_id' => $data_temporder->client_id,
+                'username_client'=> $data_temporder->client->nickname,
+                'nama_client' => $data_temporder->client->user->name,
+                'status_bayar' => 'pending',
             ]);
 
             return redirect()->route('admin.os.index');
@@ -279,18 +295,24 @@ class AdminController extends Controller
     {
         try {
             //
-            $paymentTalent = PaymentTalent::all();
-            $paymentClient = PaymentClient::where('id', 1)->get();
+            //mencari invoice dari payment
+            $key = OrderService::where('invoice', $invoice)->get();
+            //melakukan sort data
+            $paymentTalent = PaymentTalent::where('order_id', $key[0]->id)->get();
+            $paymentClient = PaymentClient::where('order_id', $key[0]->id)->get();
             $orderDetail = OrderDetail::where('invoice', $invoice)->get();
-
+            //mengembalikan data
             return view('admin.order_service_detail', compact(
                 'paymentTalent',
                 'paymentClient',
                 'orderDetail',
             ));
+            //
         } catch (\Exception $e) {
+            //
             $error = $e->getMessage();
             return $error;
+            //
         }
     }
 
