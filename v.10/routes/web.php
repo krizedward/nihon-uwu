@@ -19,5 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/1', function () {
-    return view('template.layout-default');
+    return view('template.form-layout');
 });
