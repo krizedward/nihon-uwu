@@ -21,7 +21,7 @@
     </header>
 
     <div class="page-heading">
-        <h3>Profile Statistics</h3>
+        <h3>Dashboard Admin Statistics</h3>
     </div>
     <div class="page-content">
         <section class="row">
@@ -287,7 +287,7 @@
     <footer>
         <div class="footer clearfix mb-0 text-muted">
             <div class="float-start">
-                <p>2021 &copy; Mazer</p>
+                <p>2022 - 2023 &copy; Mazer</p>
             </div>
             <div class="float-end">
                 <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
