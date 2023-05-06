@@ -20,7 +20,7 @@ class KategoriTalentController extends Controller
         	// testing data
         	$data = KategoriTalent::all();
         	// dd($index);
-        	return view('skull.admin.kategori_produk_index', compact('data'));
+        	return view('admin.kategori-talent.index', compact('data'));
 
         } catch (\Exception $e) {
 		    // Tangani exception yang terjadi
@@ -35,7 +35,7 @@ class KategoriTalentController extends Controller
         try {
         	// testing data
         	// dd($create);
-        	return view('skull.admin.kategori_produk_create');
+        	return view('admin.kategori-talent.create');
 
         } catch (\Exception $e) {
         	// Tangani exception yang terjadi
@@ -63,7 +63,7 @@ class KategoriTalentController extends Controller
 	        ]);
 	        
 	        // kembali ke halaman
-	        return redirect()->route('kategori.produk.index')
+	        return redirect()->route('admin.kategori-talent.index')
 	                        ->with('success','Product created successfully.');
 
         } catch (\Exception $e) {
@@ -80,7 +80,7 @@ class KategoriTalentController extends Controller
         	// $show = 'Kategori Produk Show Form '.$id;
         	// dd($show);
         	$data = KategoriTalent::find($id);
-        	return view('skull.admin.kategori_produk_show', compact('data'));
+        	return view('admin.kategori-talent.show', compact('data'));
 
         } catch (\Exception $e) {
         	// Tangani exception yang terjadi
@@ -96,7 +96,7 @@ class KategoriTalentController extends Controller
     		// dd($edit);
 
     		$data = KategoriTalent::find($id);
-        	return view('skull.admin.kategori_produk_edit', compact('data'));
+        	return view('admin.kategori-talent.edit', compact('data'));
 
     	} catch (\Exception $e) {
     		// Tangani exception yang terjadi
@@ -121,7 +121,7 @@ class KategoriTalentController extends Controller
             ]);
 	        
 	        // kembali ke halaman
-	        return redirect()->route('kategori.produk.index')
+	        return redirect()->route('admin.kategori-talent.index')
 	                        ->with('success','Product created successfully.');
 
     	} catch (\Exception $e) {
@@ -142,7 +142,7 @@ class KategoriTalentController extends Controller
     		$data = KategoriTalent::find($id);
         	$data->delete();
 
-	        return redirect()->route('kategori.produk.index')
+	        return redirect()->route('admin.kategori-talent.index')
 	                        ->with('success','Product deleted successfully');
 
     	} catch (\Exception $e) {

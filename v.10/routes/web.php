@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 // use App\Http\Controllers\KategoriProdukController;
+use App\Http\Controllers\KategoriTalentController;
 
 // Ketegori Produk
+// Route::get('kategori-produk', [KategoriProdukController::class, 'index'])->name('kategori.produk.index');
 // Route::get('kategori-produk', [KategoriProdukController::class, 'index'])->name('kategori.produk.index');
 // Route::get('kategori-produk/create', [KategoriProdukController::class, 'create'])->name('kategori.produk.create');
 // Route::post('kategori-produk', [KategoriProdukController::class, 'store'])->name('kategori.produk.store');
@@ -31,11 +33,19 @@ Route::prefix('admin')->group(function () {
     });
 });
 
-Route::get('/', function () {
+Route::get('/old', function () {
     // return view('welcome');
     // return view('admin.dashboard');
-    return view('admin.registrasi-talent.create');
+    return view('admin.kategori-talent.index');
 });
+
+Route::get('/', [KategoriTalentController::class, 'index'])->name('admin.kategori-talent.index');
+Route::get('/create', [KategoriTalentController::class, 'create']);
+Route::post('/create', [KategoriTalentController::class, 'store']);
+Route::get('/show/{id}', [KategoriTalentController::class, 'show'])->name('admin.kategori-talent.show');
+Route::get('/edit/{id}', [KategoriTalentController::class, 'edit'])->name('admin.kategori-talent.edit');
+Route::put('/edit/{id}', [KategoriTalentController::class, 'update'])->name('admin.kategori-talent.update');
+Route::delete('/delete/{id}', [KategoriTalentController::class, 'destroy'])->name('admin.kategori-talent.destroy');
 
 Route::get('/1', function () {
     return view('template.component-card');
