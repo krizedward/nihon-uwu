@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/main/app-dark.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.svg') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.png') }}" type="image/png">
+
+    <link rel="stylesheet" href="{{ asset('assets/extensions/@fortawesome/fontawesome-free/css/all.min.css') }}">
 @endpush
 
 <!-- main -->
@@ -52,7 +54,7 @@
                                                 <th>ID</th>
                                                 <th>NAMA</th>
                                                 <th>DESKRIPSI</th>
-                                                <th>AKSI</th>
+                                                <th colspan="3">AKSI</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -62,14 +64,26 @@
                                                 <td>{{ $d->nama }}</td>
                                                 <td class="text-bold-500">{{ $d->deskripsi }}</td>
                                                 <td>
+                                                    <a class="btn btn-info" href="{{ route('admin.kategori-talent.show',$d->id) }}">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-primary" href="{{ route('admin.kategori-talent.edit',$d->id) }}">
+                                                        <i class="fas fa-eye"></i>
+                                                    </a>
+                                                </td>
+                                                <td>
                                                     <form action="{{ route('admin.kategori-talent.destroy',$d->id) }}" method="POST">
-                                                        <a class="btn btn-info" href="{{ route('admin.kategori-talent.show',$d->id) }}">Show</a>
+                                                        <!-- <a class="btn btn-info" href="{{ route('admin.kategori-talent.show',$d->id) }}">Show</a> -->
 
-                                                        <a class="btn btn-primary" href="{{ route('admin.kategori-talent.edit',$d->id) }}">Edit</a>
+                                                        <!-- <a class="btn btn-primary" href="{{ route('admin.kategori-talent.edit',$d->id) }}">Edit</a> -->
                                                         @csrf
                                                         @method('DELETE')
-                                        
-                                                        <button type="submit" class="btn btn-danger">Delete</button>
+
+                                                        <button type="submit" class="btn btn-danger">
+                                                            <i class="fas fa-trash"></i>
+                                                        </button>
                                                     </form>
                                                 </td>
                                             </tr>

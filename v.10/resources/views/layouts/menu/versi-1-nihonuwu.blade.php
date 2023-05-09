@@ -62,6 +62,65 @@
                     </ul>
                 </li> <!-- Dropdown -->
 
+                <li class="sidebar-item  has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span>Client</span>
+                    </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="#">Default Layout</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item  has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span>Pendaftaran</span>
+                    </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="#">Default Layout</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-title">Pembayaran</li>
+
+                <li class="sidebar-item  has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span>Pembayaran</span>
+                    </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="#">Default Layout</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- <li class="sidebar-item  has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span>Pembayaran</span>
+                    </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item ">
+                            <a href="#">Default Layout</a>
+                        </li>
+                    </ul>
+                </li> -->
+
+                <li class="sidebar-title">Pendaftaran</li>
+
+                <li class="sidebar-item  ">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-envelope-fill"></i>
+                        <span>Pambayaran</span>
+                    </a>
+                </li>
+
                 <!--<li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-collection-fill"></i>

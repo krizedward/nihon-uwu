@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -41,4 +42,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function talent()
+    {
+        // return $this->hasOne('App\Models\Talent','user_id');
+        return $this->hasOne('App\Models\Talent', 'user_id');
+        // return $this->belongsTo(Talent::class);
+    }
+
+    public function client()
+    {
+        return $this->hasOne('App\Models\Client', 'user_id');
+    }
+
 }

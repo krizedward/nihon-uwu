@@ -24,6 +24,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // CategoryProductTableSeeder::class,
             KategoriTalentTableSeeder::class,
+            UsersTableSeeder::class,
+            TalentTableSeeder::class,
+            TalentAkunPembayaranTableSeeder::class,
             // KategoriSuplierTableSeeder::class,
             // tambahkan seeder lainnya di sini jika ada
         ]);
