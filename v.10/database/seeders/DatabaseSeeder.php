@@ -27,6 +27,17 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             TalentTableSeeder::class,
             TalentAkunPembayaranTableSeeder::class,
+            TalentSifatTableSeeder::class,
+            TalentFisikTableSeeder::class,
+            TalentHobiTableSeeder::class,
+            TalentLikeTableSeeder::class,
+            TalentDislikeTableSeeder::class,
+            TalentBiodataTableSeeder::class,
+            TalentFotoTableSeeder::class,
+            TalentSuaraTableSeeder::class,
+            TalentRatingTableSeeder::class,
+            TalentDeskripsiTableSeeder::class,
+            TalentServiceTableSeeder::class,
             // KategoriSuplierTableSeeder::class,
             // tambahkan seeder lainnya di sini jika ada
         ]);

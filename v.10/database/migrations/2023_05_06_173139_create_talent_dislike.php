@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
-     *
-     * @return void
+     * Next Step.
+     * php artisan make:model TalentDislike -c
+     * Happy Coding :)
      */
     public function up()
     {

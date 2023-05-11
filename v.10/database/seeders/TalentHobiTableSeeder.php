@@ -4,20 +4,20 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\TalentSifat;
+use App\Models\TalentHobi;
 
-class TalentSifatTableSeeder extends Seeder
+class TalentHobiTableSeeder extends Seeder
 {
     /**
      * Next Step.
-     * DatabaseSeeder = TalentSifatTableSeeder::class,
-     * php artisan db:seed --class=TalentSifatTableSeeder
+     * DatabaseSeeder = TalentHobiTableSeeder::class,
+     * php artisan db:seed --class=TalentHobiTableSeeder
      * Happy Coding :)
      */
     public function run()
     {
         //
-        TalentSifat::create([
+        TalentHobi::create([
             'talent_id' => 1,
         ]);
     }
