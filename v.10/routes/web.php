@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\KategoriProdukController;
+use App\Http\Controllers\KategoriTalentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// use App\Http\Controllers\KategoriProdukController;
-use App\Http\Controllers\KategoriTalentController;
+// note client :
+// membuat form validasi untuk client yang ingin menggunakan aplikasi tersebut
+// membuat form rating untuk memberikan nilai kepada service
+// membuat profile ke client dengan talent yang ada dengan profil toko. 
+// merubah gambar logo dan warna aplikasi sesuai logo [v]
 
 // Ketegori Produk
 // Route::get('kategori-produk', [KategoriProdukController::class, 'index'])->name('kategori.produk.index');
@@ -33,13 +38,13 @@ Route::prefix('admin')->group(function () {
     });
 });
 
-Route::get('/old', function () {
+Route::get('/', function () {
     // return view('welcome');
     // return view('admin.dashboard');
-    return view('admin.kategori-talent.index');
+    return view('client.dashboard');
 });
 
-Route::get('/', [KategoriTalentController::class, 'index'])->name('admin.kategori-talent.index');
+Route::get('/old', [KategoriTalentController::class, 'index'])->name('admin.kategori-talent.index');
 Route::get('/create', [KategoriTalentController::class, 'create']);
 Route::post('/create', [KategoriTalentController::class, 'store']);
 Route::get('/show/{id}', [KategoriTalentController::class, 'show'])->name('admin.kategori-talent.show');
@@ -49,4 +54,99 @@ Route::delete('/delete/{id}', [KategoriTalentController::class, 'destroy'])->nam
 
 Route::get('/1', function () {
     return view('template.component-card');
+});
+
+// temp route
+
+Route::get('/pembayaran/chart', function () {
+    // pembayaran
+    return view('client.pembayaran.chart');
+});
+
+Route::get('/pembayaran/order-konfirm', function () {
+    // pembayaran
+    return view('client.pembayaran.order-konfirm');
+});
+
+Route::get('/pembayaran/metode', function () {
+    // pembayaran
+    return view('client.pembayaran.metode');
+});
+
+Route::get('/pembayaran/berhasil', function () {
+    // pembayaran
+    return view('client.pembayaran.success');
+});
+
+Route::get('/pemesanan/talent-katalog', function () {
+    // pemesanan
+    return view('client.pemesanan.talent-katalog');
+});
+
+Route::get('/pemesanan/talent-domisili', function () {
+    // pemesanan
+    return view('client.pemesanan.talent-domisili');
+});
+
+Route::get('/pemesanan/talent-listorder', function () {
+    // pemesanan
+    return view('client.pemesanan.talent-listorder');
+});
+
+Route::get('/pemesanan/talent-riwayat', function () {
+    // pemesanan
+    return view('client.pemesanan.talent-riwayat');
+});
+
+Route::get('/pemesanan/talent-page', function () {
+    // pemesanan
+    return view('client.pemesanan.talent-page');
+});
+
+// Route::get('/pemesanan/talent-detail', function () {
+//     // pemesanan
+//     return view('client.pemesanan.talent-detail');
+// });
+
+Route::get('/chat', function () {
+    return view('client.chat.index');
+});
+
+Route::get('/riwayat', function () {
+    //riwayat
+    return view('client.riwayat.index');
+});
+
+Route::get('/riwayat/detail', function () {
+    //riwayat
+    return view('client.riwayat.detail');
+});
+
+Route::get('/pengaturan', function () {
+    // pengaturan
+    return view('client.pengaturan.index');
+});
+
+Route::get('/pengaturan/profile', function () {
+    //pengaturan
+    return view('client.pengaturan.profile');
+});
+
+Route::get('/pengaturan/profile/edit', function () {
+    //pengaturan
+    return view('client.pengaturan.profile-edit');
+});
+
+// Route::get('/talent-katalog', function () {
+//     // pemesanan
+//     return view('client.pemesanan.talent-katalog');
+// });
+
+Route::get('/talent-detail', function () {
+    // pemesanan
+    return view('client.pemesanan.talent-detail');
+});
+
+Route::get('/offline', function () {
+    return view('client.offline');
 });

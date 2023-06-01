@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Nihon Uwu Admin Dashboard</title>
     @stack('header')
+    @vite([])
 </head>
 <body>
     <div id="app">
