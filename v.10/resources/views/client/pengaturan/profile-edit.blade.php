@@ -54,4 +54,6 @@
         </div>
       </div>
     </div>
+
+    @include('layouts.menu.client-main-suha')
 @endsection

@@ -65,7 +65,7 @@
                 </a>
             </li>
             <li>
-                <a href="/pemesanan/talent-riwayat">
+                <a href="/pemesanan/talent-listorder">
                     <i class="lni lni-heart"></i>
                     Dating
                 </a>
@@ -77,7 +77,7 @@
                 </a>
             </li> -->
             <li>
-                <a href="/pemesanan/talent-domisili">
+                <a href="/pemesanan/talent-riwayat">
                     <i class="lni lni-book"></i>
                     Pemesanan
                 </a>

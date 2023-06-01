@@ -16,9 +16,9 @@ use App\Http\Controllers\KategoriTalentController;
 */
 
 // note client :
-// membuat form validasi untuk client yang ingin menggunakan aplikasi tersebut
-// membuat form rating untuk memberikan nilai kepada service
-// membuat profile ke client dengan talent yang ada dengan profil toko. 
+// membuat form validasi untuk client yang ingin menggunakan aplikasi [v]
+// membuat form rating untuk memberikan nilai kepada service [v]
+// membuat profile ke client dengan talent yang ada dengan profil toko. [v]
 // merubah gambar logo dan warna aplikasi sesuai logo [v]
 
 // Ketegori Produk
@@ -101,6 +101,11 @@ Route::get('/pemesanan/talent-riwayat', function () {
 Route::get('/pemesanan/talent-page', function () {
     // pemesanan
     return view('client.pemesanan.talent-page');
+});
+
+Route::get('/pemesanan/talent-rating', function () {
+    // pemesanan
+    return view('client.pemesanan.talent-rating');
 });
 
 // Route::get('/pemesanan/talent-detail', function () {

@@ -225,15 +225,15 @@
                 <div class="card-body d-flex align-items-center">
                   <div class="product-thumbnail-side">
                     <!-- Thumbnail -->
-                    <a class="product-thumbnail d-block" href="#"><img src="{{ asset('img/mobil/mobilio.jpg') }}" alt=""></a>
+                    <a class="product-thumbnail d-block" href="/pemesanan/talent-page"><img src="{{ asset('img/mobil/mobilio.jpg') }}" alt=""></a>
                   </div>
                   <div class="product-description">
-                    <!-- Product Title --><a class="product-title d-block" href="#">Honda Mobilio [At] 2019</a>
+                    <!-- Product Title --><a class="product-title d-block" href="/pemesanan/talent-page">Tiaras</a>
                     <!-- Price -->
                     <p class="sale-price"><i class="lni lni-dollar"></i>Rp 229.000</p>
                     <!-- Rating -->
                     <div class="product-rating"><i class="lni lni-star-filled"></i>4.88 (39)</div>
-                    <!-- Buy Now Button --><a class="btn btn-success btn-sm" href="#"></i>Sedang Melakukan Rental</a>
+                    <!-- Buy Now Button --><a class="btn btn-success btn-sm" href="/pemesanan/talent-page"></i>Sedang Melakukan Rental</a>
                   </div>
                 </div>
               </div>
@@ -244,5 +244,5 @@
       </div>
     </div>
 
-    @include('layouts.menu.client-1-suha')
+    @include('layouts.menu.client-main-suha')
 @endsection

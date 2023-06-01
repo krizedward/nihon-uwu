@@ -44,10 +44,12 @@
                 <div class="data-content"><a class="btn btn-danger btn-sm" href="my-order.html">View</a></div>
               </div>
               <!-- Edit Profile-->
-              <div class="edit-profile-btn mt-3"><a class="btn btn-info w-100" href="edit-profile.html"><i class="lni lni-pencil me-2"></i>Edit Profile</a></div>
+              <div class="edit-profile-btn mt-3"><a class="btn btn-info w-100" href="/pengaturan/profile/edit"><i class="lni lni-pencil me-2"></i>Edit Profile</a></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    @include('layouts.menu.client-main-suha')
 @endsection

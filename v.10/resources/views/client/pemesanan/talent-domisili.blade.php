@@ -49,5 +49,5 @@
       </div>
     </div>
 
-    @include('layouts.menu.client-1-suha')
+    @include('layouts.menu.client-main-suha')
 @endsection

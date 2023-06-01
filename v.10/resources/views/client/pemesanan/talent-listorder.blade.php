@@ -191,5 +191,5 @@
       </div>
     </div>
 
-    @include('layouts.menu.versi-1-suha')
+    @include('layouts.menu.client-main-suha')
 @endsection
