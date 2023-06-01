@@ -41,7 +41,7 @@ Route::prefix('admin')->group(function () {
 Route::get('/', function () {
     // return view('welcome');
     // return view('admin.dashboard');
-    return view('client.dashboard');
+    return view('talent.dashboard');
 });
 
 Route::get('/old', [KategoriTalentController::class, 'index'])->name('admin.kategori-talent.index');
@@ -154,4 +154,35 @@ Route::get('/talent-detail', function () {
 
 Route::get('/offline', function () {
     return view('client.offline');
+});
+
+// talent
+
+Route::get('/talent', function () {
+    return view('talent.dashboard');
+});
+
+Route::get('/talent/pembayaran', function () {
+    // pemanyaran
+    return view('talent.pembayaran.index');
+});
+
+Route::get('/talent/pembayaran/detail', function () {
+    // pembayaran
+    return view('talent.pembayaran.show');
+});
+
+Route::get('/talent/pelayanan', function () {
+    // pelayanan
+    return view('talent.pelayanan.index');
+});
+
+Route::get('/talent/client-dating', function () {
+    // pelayanan
+    return view('talent.pelayanan.client-dating');
+});
+
+Route::get('/talent/akun', function () {
+    // pelayanan
+    return view('talent.akun.profile');
 });
