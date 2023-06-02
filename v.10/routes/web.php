@@ -41,7 +41,7 @@ Route::prefix('admin')->group(function () {
 Route::get('/', function () {
     // return view('welcome');
     // return view('admin.dashboard');
-    return view('talent.dashboard');
+    return view('welcome');
 });
 
 Route::get('/old', [KategoriTalentController::class, 'index'])->name('admin.kategori-talent.index');
