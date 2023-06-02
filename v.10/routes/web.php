@@ -42,6 +42,8 @@ Route::get('/', function () {
     // return view('welcome');
     // return view('admin.dashboard');
     return view('welcome');
+    // membuat mark untuk mebisa tahu caranya berhasil apa gagal
+    // dengan kalo di update apa hilang atau tidak
 });
 
 Route::get('/old', [KategoriTalentController::class, 'index'])->name('admin.kategori-talent.index');
